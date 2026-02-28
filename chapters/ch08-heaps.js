@@ -1,19 +1,19 @@
 // ============================================================
-// Ch 8 · 堆与优先队列 — Heaps & Priority Queues
+// Ch 8 · Heaps & Priority Queues
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch08',
     number: 8,
-    title: '堆与优先队列',
+    title: 'Heaps & Priority Queues',
     subtitle: 'Heaps & Priority Queues',
     sections: [
         // ============================================================
-        // Section 1 : 二叉堆 — Binary Heaps
+        // Section 1 : Binary Heaps
         // ============================================================
         {
             id: 'ch08-sec01',
-            title: '二叉堆',
+            title: 'Binary Heaps',
             content: `<h2>Binary Heaps</h2>
 <p>A <strong>binary heap</strong> is a nearly complete binary tree stored compactly in an array. It supports efficient priority queue operations — insert and extract-min/max — in \\(O(\\log n)\\) time.</p>
 
@@ -206,11 +206,11 @@ $$A[\\text{parent}(i)] \\ge A[i]$$
             ]
         },
         // ============================================================
-        // Section 2 : 建堆 — Building a Heap in O(n)
+        // Section 2 : Building a Heap in O(n)
         // ============================================================
         {
             id: 'ch08-sec02',
-            title: '建堆',
+            title: 'Building a Heap',
             content: `<h2>Building a Heap in \\(O(n)\\)</h2>
 <p>A naive approach inserts elements one by one in \\(O(n \\log n)\\). But we can build a heap from an unordered array in \\(O(n)\\) using bottom-up heapify.</p>
 
@@ -358,11 +358,11 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             ]
         },
         // ============================================================
-        // Section 3 : 堆排序 — Heapsort
+        // Section 3 : Heapsort
         // ============================================================
         {
             id: 'ch08-sec03',
-            title: '堆排序',
+            title: 'Heapsort',
             content: `<h2>Heapsort</h2>
 <p>Heapsort combines BuildMaxHeap with repeated extract-max to sort in-place in \\(O(n \\log n)\\) worst-case time.</p>
 
@@ -511,11 +511,11 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             ]
         },
         // ============================================================
-        // Section 4 : d-叉堆 — d-ary Heaps
+        // Section 4 : d-ary Heaps
         // ============================================================
         {
             id: 'ch08-sec04',
-            title: 'd-叉堆',
+            title: 'd-ary Heaps',
             content: `<h2>d-ary Heaps</h2>
 <p>A <strong>d-ary heap</strong> generalizes binary heaps: each node has at most \\(d\\) children instead of 2.</p>
 
@@ -703,11 +703,11 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             ]
         },
         // ============================================================
-        // Section 5 : 斐波那契堆 — Fibonacci Heaps
+        // Section 5 : Fibonacci Heaps
         // ============================================================
         {
             id: 'ch08-sec05',
-            title: '斐波那契堆概览',
+            title: 'Fibonacci Heaps Overview',
             content: `<h2>Fibonacci Heaps</h2>
 <p>A <strong>Fibonacci heap</strong> is a collection of heap-ordered trees that achieves excellent amortized bounds, making it ideal for algorithms like Dijkstra and Prim.</p>
 

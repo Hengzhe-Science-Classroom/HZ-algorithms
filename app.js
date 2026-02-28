@@ -1,4 +1,4 @@
-// === 算法设计与分析 - Core Application ===
+// === Algorithm Design & Analysis - Core Application ===
 window.CHAPTERS = window.CHAPTERS || [];
 window.EXTRA_VIZ = window.EXTRA_VIZ || {};
 

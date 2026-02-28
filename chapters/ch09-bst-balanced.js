@@ -1,19 +1,19 @@
 // ============================================================
-// Ch 9 · 二叉搜索树与平衡树 — BST & Balanced Trees
+// Ch 9 · BST & Balanced Trees
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch09',
     number: 9,
-    title: '二叉搜索树与平衡树',
+    title: 'BST & Balanced Trees',
     subtitle: 'Binary Search Trees & Balanced Trees',
     sections: [
         // ============================================================
-        // Section 1 : BST 基本操作 — BST Operations
+        // Section 1 : BST Operations
         // ============================================================
         {
             id: 'ch09-sec01',
-            title: 'BST 基本操作',
+            title: 'BST Operations',
             content: `<h2>Binary Search Tree Operations</h2>
 <p>A <strong>binary search tree (BST)</strong> is a rooted binary tree where each node \\(x\\) satisfies: all keys in the left subtree \\(\\le x.\\text{key}\\), and all keys in the right subtree \\(\\ge x.\\text{key}\\).</p>
 
@@ -240,11 +240,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 2 : 遍历与前驱/后继 — Traversals & Successor/Predecessor
+        // Section 2 : Traversals & Successor/Predecessor
         // ============================================================
         {
             id: 'ch09-sec02',
-            title: '遍历与前驱/后继',
+            title: 'Traversals & Successor/Predecessor',
             content: `<h2>Traversals & Successor/Predecessor</h2>
 
 <h3>Tree Traversals</h3>
@@ -438,11 +438,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 3 : 红黑树 — Red-Black Trees
+        // Section 3 : Red-Black Trees
         // ============================================================
         {
             id: 'ch09-sec03',
-            title: '红黑树',
+            title: 'Red-Black Trees',
             content: `<h2>Red-Black Trees</h2>
 <p>A <strong>red-black tree</strong> is a BST with an extra bit per node (color: red or black) and balancing rules that guarantee \\(h = O(\\log n)\\).</p>
 
@@ -697,11 +697,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 4 : AVL树 — AVL Trees
+        // Section 4 : AVL Trees
         // ============================================================
         {
             id: 'ch09-sec04',
-            title: 'AVL树',
+            title: 'AVL Trees',
             content: `<h2>AVL Trees</h2>
 <p>AVL trees (Adelson-Velsky and Landis, 1962) were the first self-balancing BSTs. They maintain a stricter balance than red-black trees.</p>
 
@@ -897,11 +897,11 @@ $$|h(x.\\text{left}) - h(x.\\text{right})| \\le 1$$
             ]
         },
         // ============================================================
-        // Section 5 : 顺序统计树 — Order-Statistic Trees
+        // Section 5 : Order-Statistic Trees
         // ============================================================
         {
             id: 'ch09-sec05',
-            title: '顺序统计树',
+            title: 'Order-Statistic Trees',
             content: `<h2>Order-Statistic Trees</h2>
 <p>An <strong>order-statistic tree</strong> augments a balanced BST (e.g., red-black tree) so that we can efficiently find the \\(i\\)-th smallest element and determine the rank of any element.</p>
 

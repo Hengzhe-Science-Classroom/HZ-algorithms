@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch19',
     number: 19,
-    title: '最大流与最小割',
+    title: 'Max-Flow & Min-Cut',
     subtitle: 'Max-Flow & Min-Cut',
     sections: [
 
@@ -13,7 +13,7 @@ window.CHAPTERS.push({
             id: 'ch19-sec01',
             title: 'Flow Networks',
             content: `
-<h2>流网络 (Flow Networks)</h2>
+<h2>Flow Networks</h2>
 
 <p>A <strong>flow network</strong> is a directed graph \\(G = (V, E)\\) equipped with a <strong>capacity function</strong> \\(c : E \\to \\mathbb{R}_{\\geq 0}\\), a distinguished <strong>source</strong> vertex \\(s\\), and a <strong>sink</strong> vertex \\(t\\).</p>
 
@@ -296,7 +296,7 @@ window.CHAPTERS.push({
             id: 'ch19-sec02',
             title: 'Ford-Fulkerson Method',
             content: `
-<h2>Ford-Fulkerson 方法</h2>
+<h2>Ford-Fulkerson Method</h2>
 
 <p>The <strong>Ford-Fulkerson method</strong> is the foundational strategy for computing maximum flows: repeatedly find an augmenting path in the residual graph and push flow along it.</p>
 
@@ -516,7 +516,7 @@ window.CHAPTERS.push({
             id: 'ch19-sec03',
             title: 'Edmonds-Karp Algorithm',
             content: `
-<h2>Edmonds-Karp 算法</h2>
+<h2>Edmonds-Karp Algorithm</h2>
 
 <p>The <strong>Edmonds-Karp algorithm</strong> is Ford-Fulkerson with BFS for finding augmenting paths. This simple choice yields a polynomial-time guarantee independent of the flow value.</p>
 
@@ -795,7 +795,7 @@ window.CHAPTERS.push({
             id: 'ch19-sec04',
             title: 'Max-Flow Min-Cut Theorem',
             content: `
-<h2>最大流最小割定理</h2>
+<h2>Max-Flow Min-Cut Theorem</h2>
 
 <p>The <strong>max-flow min-cut theorem</strong> is one of the most beautiful and important results in combinatorial optimization. It establishes a duality between the maximum flow and the minimum cut.</p>
 
@@ -1080,7 +1080,7 @@ $$c(S, T) = \\sum_{u \\in S,\\, v \\in T,\\, (u,v) \\in E} c(u, v).$$
             id: 'ch19-sec05',
             title: 'Bipartite Matching & Applications',
             content: `
-<h2>二部匹配与应用</h2>
+<h2>Bipartite Matching & Applications</h2>
 
 <p>One of the most powerful applications of max-flow is solving <strong>bipartite matching</strong> problems by reduction to network flow.</p>
 

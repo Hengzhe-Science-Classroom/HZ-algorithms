@@ -1,12 +1,12 @@
 // ============================================================
-// Chapter 2 · 递推关系与主定理
+// Chapter 2 · Recurrences & the Master Theorem
 // Recurrences & the Master Theorem
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch02',
     number: 2,
-    title: '递推关系与主定理',
+    title: 'Recurrences & the Master Theorem',
     subtitle: 'Recurrences & the Master Theorem',
     sections: [
         // --------------------------------------------------------
@@ -14,8 +14,8 @@ window.CHAPTERS.push({
         // --------------------------------------------------------
         {
             id: 'ch02-sec01',
-            title: '分治递推关系',
-            content: `<h2>分治递推关系</h2>
+            title: 'Divide-and-Conquer Recurrences',
+            content: `<h2>Divide-and-Conquer Recurrences</h2>
 <p>Recursive algorithms naturally give rise to <strong>recurrence relations</strong> that describe their running time. Understanding how to solve these recurrences is a core skill in algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -158,8 +158,8 @@ $$T(n) = \\begin{cases} \\Theta(1) & \\text{if } n \\le n_0 \\\\ a \\, T(n/b) + 
         // --------------------------------------------------------
         {
             id: 'ch02-sec02',
-            title: '代入法',
-            content: `<h2>代入法 (Substitution Method)</h2>
+            title: 'Substitution Method',
+            content: `<h2>Substitution Method</h2>
 <p>The substitution method is the most general technique: <strong>guess</strong> the solution and then <strong>prove</strong> it correct by mathematical induction.</p>
 
 <div class="env-block definition">
@@ -287,8 +287,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
         // --------------------------------------------------------
         {
             id: 'ch02-sec03',
-            title: '递归树方法',
-            content: `<h2>递归树方法 (Recursion-Tree Method)</h2>
+            title: 'Recursion-Tree Method',
+            content: `<h2>Recursion-Tree Method</h2>
 <p>The recursion-tree method provides a visual way to solve recurrences by drawing out the tree of recursive calls and summing the work at each level.</p>
 
 <div class="env-block definition">
@@ -519,8 +519,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
         // --------------------------------------------------------
         {
             id: 'ch02-sec04',
-            title: '主定理',
-            content: `<h2>主定理 (The Master Theorem)</h2>
+            title: 'The Master Theorem',
+            content: `<h2>The Master Theorem</h2>
 <p>The Master Theorem provides a direct formula for recurrences of the form \\(T(n) = aT(n/b) + f(n)\\), where \\(a \\ge 1\\) and \\(b > 1\\).</p>
 
 <div class="env-block theorem">
@@ -708,8 +708,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
         // --------------------------------------------------------
         {
             id: 'ch02-sec05',
-            title: 'Akra-Bazzi 方法',
-            content: `<h2>Akra-Bazzi 方法</h2>
+            title: 'Akra-Bazzi Method',
+            content: `<h2>Akra-Bazzi Method</h2>
 <p>The Akra-Bazzi method generalizes the Master Theorem to handle unequal subproblem sizes and covers the "gaps" between the Master Theorem's three cases.</p>
 
 <div class="env-block theorem">

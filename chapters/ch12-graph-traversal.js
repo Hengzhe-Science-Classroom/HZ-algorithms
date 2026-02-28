@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch12',
     number: 12,
-    title: '图的遍历',
+    title: 'Graph Traversal',
     subtitle: 'Graph Traversal: BFS, DFS, Edge Classification, and Applications',
     sections: [
 
@@ -11,13 +11,13 @@ window.CHAPTERS.push({
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch12-sec01',
-        title: '1. 图的表示 (Graph Representations)',
+        title: '1. Graph Representations',
         content: `
-<h2>图的表示 — Graph Representations</h2>
+<h2>Graph Representations</h2>
 
 <p>
-A <strong>graph</strong> \(G = (V, E)\) consists of a set \(V\) of <em>vertices</em> (顶点) and a set \(E\) of <em>edges</em> (边).
-Edges may be <strong>directed</strong> (有向) or <strong>undirected</strong> (无向), and may carry <strong>weights</strong> (权重).
+A <strong>graph</strong> \(G = (V, E)\) consists of a set \(V\) of <em>vertices</em> and a set \(E\) of <em>edges</em>.
+Edges may be <strong>directed</strong> or <strong>undirected</strong>, and may carry <strong>weights</strong>.
 The choice of data structure for representing a graph profoundly affects the running time of graph algorithms.
 </p>
 
@@ -25,14 +25,14 @@ The choice of data structure for representing a graph profoundly affects the run
 <div class="env-title">Definition 12.1 (Graph)</div>
 <div class="env-body">
 <p>
-A <strong>directed graph</strong> (有向图) \(G = (V, E)\) has \(E \\subseteq V \\times V\).
-An <strong>undirected graph</strong> (无向图) has \(E\) as a set of unordered pairs from \(V\).
+A <strong>directed graph</strong> \(G = (V, E)\) has \(E \\subseteq V \\times V\).
+An <strong>undirected graph</strong> has \(E\) as a set of unordered pairs from \(V\).
 We write \(n = |V|\) and \(m = |E|\).
 </p>
 </div>
 </div>
 
-<h3>1.1 Adjacency Matrix 邻接矩阵</h3>
+<h3>1.1 Adjacency Matrix</h3>
 
 <p>
 An \(n \\times n\) matrix \(A\) where \(A[i][j] = 1\) if \((i,j) \\in E\), else \(A[i][j] = 0\).
@@ -49,7 +49,7 @@ Best for <strong>dense graphs</strong> (\(m = \\Theta(n^2)\)) or when edge-exist
 </div>
 </div>
 
-<h3>1.2 Adjacency List 邻接表</h3>
+<h3>1.2 Adjacency List</h3>
 
 <p>
 An array of \(n\) lists. The list \(\\text{Adj}[u]\) contains all vertices \(v\) such that \((u, v) \\in E\).
@@ -66,7 +66,7 @@ Best for <strong>sparse graphs</strong> (\(m = O(n)\)) and most algorithms.
 </div>
 </div>
 
-<h3>1.3 Edge List 边表</h3>
+<h3>1.3 Edge List</h3>
 
 <p>
 A simple list of all edges \((u, v)\) (or \((u, v, w)\) for weighted). Space \(\\Theta(m)\).
@@ -219,9 +219,9 @@ For directed graphs, \(\\sum_{v} \\text{in-deg}(v) = \\sum_{v} \\text{out-deg}(v
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch12-sec02',
-        title: '2. 广度优先搜索 (BFS)',
+        title: '2. Breadth-First Search (BFS)',
         content: `
-<h2>广度优先搜索 — Breadth-First Search</h2>
+<h2>Breadth-First Search</h2>
 
 <p>
 Breadth-first search (BFS) explores a graph in "wavefronts": it visits all vertices at distance 1 from the source before those at distance 2, and so on.
@@ -260,7 +260,7 @@ while Q is not empty:
 <p>
 After BFS(G, s), for every vertex \(v\) reachable from \(s\), \(d[v] = \\delta(s, v)\),
 the shortest-path distance (in terms of number of edges). The predecessor subgraph
-\(G_\\pi\) forms a <strong>BFS tree</strong> (BFS 树) rooted at \(s\).
+\(G_\\pi\) forms a <strong>BFS tree</strong> rooted at \(s\).
 </p>
 </div>
 </div>
@@ -535,9 +535,9 @@ all vertices at distance exactly \(k\) from the source.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch12-sec03',
-        title: '3. 深度优先搜索 (DFS)',
+        title: '3. Depth-First Search (DFS)',
         content: `
-<h2>深度优先搜索 — Depth-First Search</h2>
+<h2>Depth-First Search</h2>
 
 <p>
 Depth-first search (DFS) explores as deeply as possible along each branch before backtracking.
@@ -760,9 +760,9 @@ Space: \(O(n)\) for the recursion stack (in the worst case, e.g., a path graph).
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch12-sec04',
-        title: '4. 边的分类 (Edge Classification)',
+        title: '4. Edge Classification',
         content: `
-<h2>边的分类 — Edge Classification in DFS</h2>
+<h2>Edge Classification in DFS</h2>
 
 <p>
 DFS classifies every edge \((u, v)\) of the graph into one of four types, based on
@@ -774,10 +774,10 @@ the state of \(v\) when the edge is explored from \(u\).
 <div class="env-body">
 <p>During DFS, when we explore edge \((u, v)\):</p>
 <ul>
-<li><strong>Tree edge (树边)</strong>: \(v\) is white. Edge is part of the DFS forest.</li>
-<li><strong>Back edge (后向边)</strong>: \(v\) is gray. Edge goes to an ancestor in the DFS tree. Self-loops are back edges.</li>
-<li><strong>Forward edge (前向边)</strong>: \(v\) is black and \(d[u] < d[v]\). Edge goes to a descendant (via a non-tree path).</li>
-<li><strong>Cross edge (横跨边)</strong>: \(v\) is black and \(d[u] > d[v]\). Edge goes to a vertex in a different subtree or an already-finished vertex.</li>
+<li><strong>Tree edge</strong>: \(v\) is white. Edge is part of the DFS forest.</li>
+<li><strong>Back edge</strong>: \(v\) is gray. Edge goes to an ancestor in the DFS tree. Self-loops are back edges.</li>
+<li><strong>Forward edge</strong>: \(v\) is black and \(d[u] < d[v]\). Edge goes to a descendant (via a non-tree path).</li>
+<li><strong>Cross edge</strong>: \(v\) is black and \(d[u] > d[v]\). Edge goes to a vertex in a different subtree or an already-finished vertex.</li>
 </ul>
 </div>
 </div>
@@ -975,11 +975,11 @@ being discovered after \(v\) finishes. Thus \(v\) cannot be black.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch12-sec05',
-        title: '5. 应用 (Applications of BFS & DFS)',
+        title: '5. Applications of BFS & DFS',
         content: `
-<h2>应用 — Applications of BFS & DFS</h2>
+<h2>Applications of BFS & DFS</h2>
 
-<h3>5.1 Cycle Detection 环检测</h3>
+<h3>5.1 Cycle Detection</h3>
 
 <div class="env-block theorem">
 <div class="env-title">Theorem 12.5</div>
@@ -991,13 +991,13 @@ being discovered after \(v\) finishes. Thus \(v\) cannot be black.
 </div>
 </div>
 
-<h3>5.2 Bipartiteness Testing 二部图检测</h3>
+<h3>5.2 Bipartiteness Testing</h3>
 
 <div class="env-block definition">
 <div class="env-title">Definition 12.3 (Bipartite Graph)</div>
 <div class="env-body">
 <p>
-A graph is <strong>bipartite</strong> (二部图) if its vertex set can be partitioned into two sets \(L\) and \(R\)
+A graph is <strong>bipartite</strong> if its vertex set can be partitioned into two sets \(L\) and \(R\)
 such that every edge has one endpoint in \(L\) and one in \(R\).
 </p>
 </div>
@@ -1036,14 +1036,14 @@ return "bipartite"
 </div>
 </div>
 
-<h3>5.3 Connected Components 连通分量</h3>
+<h3>5.3 Connected Components</h3>
 
 <p>
 In an undirected graph, BFS or DFS from each unvisited vertex identifies all <strong>connected components</strong>.
 In a directed graph, we need more sophisticated algorithms (Kosaraju, Tarjan) for <strong>strongly connected components</strong> (Chapter 13).
 </p>
 
-<h3>5.4 Path Finding 路径查找</h3>
+<h3>5.4 Path Finding</h3>
 
 <p>
 BFS finds shortest paths in unweighted graphs. DFS can find <em>any</em> path (not necessarily shortest).

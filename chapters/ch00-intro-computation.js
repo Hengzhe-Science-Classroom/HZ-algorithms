@@ -1,12 +1,12 @@
 // ============================================================
-// Chapter 0 · 算法概论与计算模型
+// Chapter 0 · Introduction & Models of Computation
 // Introduction to Algorithms & Models of Computation
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch00',
     number: 0,
-    title: '算法概论与计算模型',
+    title: 'Introduction & Models of Computation',
     subtitle: 'Introduction to Algorithms & Models of Computation',
     sections: [
         // --------------------------------------------------------
@@ -14,8 +14,8 @@ window.CHAPTERS.push({
         // --------------------------------------------------------
         {
             id: 'ch00-sec01',
-            title: '什么是算法',
-            content: `<h2>什么是算法</h2>
+            title: 'What Is an Algorithm',
+            content: `<h2>What Is an Algorithm</h2>
 <p>An <strong>algorithm</strong> is a well-defined, finite sequence of instructions that transforms an input into a desired output. This deceptively simple definition hides a rich tapestry of ideas that have occupied mathematicians and computer scientists for over a century.</p>
 
 <div class="env-block definition">
@@ -187,8 +187,8 @@ window.CHAPTERS.push({
         // --------------------------------------------------------
         {
             id: 'ch00-sec02',
-            title: '正确性与循环不变式',
-            content: `<h2>正确性与循环不变式</h2>
+            title: 'Correctness & Loop Invariants',
+            content: `<h2>Correctness & Loop Invariants</h2>
 <p>How do we <em>prove</em> that an algorithm is correct? For iterative algorithms, the primary tool is the <strong>loop invariant</strong>.</p>
 
 <div class="env-block definition">
@@ -406,8 +406,8 @@ INSERTION-SORT(A, n)
         // --------------------------------------------------------
         {
             id: 'ch00-sec03',
-            title: 'RAM 计算模型',
-            content: `<h2>RAM 计算模型</h2>
+            title: 'RAM Model of Computation',
+            content: `<h2>RAM Model of Computation</h2>
 <p>To analyze algorithms rigorously, we need a precise model of computation that tells us what operations are available and how much they cost. The <strong>Random Access Machine (RAM)</strong> model is the standard abstraction used throughout algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -601,8 +601,8 @@ INSERTION-SORT(A, n)
         // --------------------------------------------------------
         {
             id: 'ch00-sec04',
-            title: '插入排序的运行时间分析',
-            content: `<h2>插入排序的运行时间分析</h2>
+            title: 'Running Time Analysis of Insertion Sort',
+            content: `<h2>Running Time Analysis of Insertion Sort</h2>
 <p>Let us put the RAM model to work and derive precise running time bounds for Insertion Sort.</p>
 
 <div class="env-block theorem">
@@ -816,8 +816,8 @@ $$\\sum_{j=2}^{n}(j-1) = 1 + 2 + \\cdots + (n-1) = \\frac{n(n-1)}{2} = \\Theta(n
         // --------------------------------------------------------
         {
             id: 'ch00-sec05',
-            title: '从插入排序到更好的算法',
-            content: `<h2>从插入排序到更好的算法</h2>
+            title: 'From Insertion Sort to Better Algorithms',
+            content: `<h2>From Insertion Sort to Better Algorithms</h2>
 <p>Insertion Sort's \\(\\Theta(n^2)\\) worst-case time is impractical for large inputs. Can we do better? The answer, as we will see in later chapters, is a resounding <strong>yes</strong>: algorithms like Merge Sort achieve \\(\\Theta(n \\log n)\\) time, which is provably optimal for comparison-based sorting.</p>
 
 <div class="env-block theorem">

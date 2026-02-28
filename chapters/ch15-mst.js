@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch15',
     number: 15,
-    title: '最小生成树',
+    title: 'Minimum Spanning Trees',
     subtitle: 'Minimum Spanning Trees: Cut Property, Kruskal, Prim, and Boruvka',
     sections: [
 
@@ -11,13 +11,13 @@ window.CHAPTERS.push({
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch15-sec01',
-        title: '1. 割性质与通用 MST (Cut Property & Generic MST)',
+        title: '1. Cut Property & Generic MST',
         content: `
-<h2>割性质与通用 MST — Cut Property & Generic MST</h2>
+<h2>Cut Property & Generic MST</h2>
 
 <p>
-A <strong>spanning tree</strong> (生成树) of a connected undirected graph \\(G = (V, E)\\) is a subgraph
-that is a tree connecting all vertices. A <strong>minimum spanning tree (MST)</strong> (最小生成树)
+A <strong>spanning tree</strong> of a connected undirected graph \\(G = (V, E)\\) is a subgraph
+that is a tree connecting all vertices. A <strong>minimum spanning tree (MST)</strong>
 is a spanning tree whose total edge weight is minimized.
 </p>
 
@@ -37,7 +37,7 @@ minimizes \\(w(T)\\) over all spanning trees.
 <div class="env-title">Definition 15.2 (Cut)</div>
 <div class="env-body">
 <p>
-A <strong>cut</strong> (割) \\((S, V \\setminus S)\\) of \\(G\\) is a partition of \\(V\\) into two non-empty sets.
+A <strong>cut</strong> \\((S, V \\setminus S)\\) of \\(G\\) is a partition of \\(V\\) into two non-empty sets.
 An edge <strong>crosses</strong> the cut if its endpoints are in different sets.
 An edge is a <strong>light edge</strong> crossing a cut if it has minimum weight among all crossing edges.
 A cut <strong>respects</strong> a set \\(A \\subseteq E\\) if no edge in \\(A\\) crosses the cut.
@@ -377,9 +377,9 @@ They differ in <em>how</em> they find safe edges, but all rely on the cut proper
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch15-sec02',
-        title: '2. Kruskal 算法 (Kruskal\'s Algorithm)',
+        title: '2. Kruskal\'s Algorithm',
         content: `
-<h2>Kruskal 算法 — Kruskal's Algorithm with Union-Find</h2>
+<h2>Kruskal's Algorithm with Union-Find</h2>
 
 <p>
 Kruskal's algorithm builds the MST by processing edges in order of <strong>increasing weight</strong>,
@@ -601,9 +601,9 @@ Total: \\(O(m \\log n)\\).
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch15-sec03',
-        title: '3. Prim 算法 (Prim\'s Algorithm)',
+        title: '3. Prim\'s Algorithm',
         content: `
-<h2>Prim 算法 — Prim's Algorithm with Priority Queue</h2>
+<h2>Prim's Algorithm with Priority Queue</h2>
 
 <p>
 Prim's algorithm grows a single MST tree from a starting vertex, repeatedly adding the
@@ -835,9 +835,9 @@ with a good union-find. Both run in \\(O(m \\log n)\\) with heaps.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch15-sec04',
-        title: '4. Boruvka 算法 (Boruvka\'s Algorithm)',
+        title: '4. Boruvka\'s Algorithm',
         content: `
-<h2>Boruvka 算法 — Boruvka's Algorithm</h2>
+<h2>Boruvka's Algorithm</h2>
 
 <p>
 Boruvka's algorithm (1926) is the oldest MST algorithm. In each <strong>phase</strong>,
@@ -1055,11 +1055,11 @@ many randomized and near-linear-time MST algorithms.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch15-sec05',
-        title: '5. 正确性证明与性质 (Correctness & MST Properties)',
+        title: '5. Correctness & MST Properties',
         content: `
-<h2>正确性证明与 MST 性质 — Correctness Proofs & MST Properties</h2>
+<h2>Correctness Proofs & MST Properties</h2>
 
-<h3>5.1 Cycle Property (环性质)</h3>
+<h3>5.1 Cycle Property</h3>
 
 <div class="env-block theorem">
 <div class="env-title">Theorem 15.5 (Cycle Property)</div>

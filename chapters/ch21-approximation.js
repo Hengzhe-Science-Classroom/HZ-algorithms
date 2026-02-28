@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch21',
     number: 21,
-    title: '近似与随机化算法',
+    title: 'Approximation & Randomized Algorithms',
     subtitle: 'Approximation & Randomized Algorithms',
     sections: [
 
@@ -13,7 +13,7 @@ window.CHAPTERS.push({
             id: 'ch21-sec01',
             title: 'Approximation Algorithms & Ratios',
             content: `
-<h2>近似算法与近似比</h2>
+<h2>Approximation Algorithms & Approximation Ratio</h2>
 
 <p>When facing NP-hard optimization problems, we often cannot find exact solutions in polynomial time. <strong>Approximation algorithms</strong> trade optimality for efficiency, providing solutions with <em>provable guarantees</em> on how far they are from optimal.</p>
 
@@ -147,7 +147,7 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             id: 'ch21-sec02',
             title: 'Vertex Cover: 2-Approximation',
             content: `
-<h2>顶点覆盖的2-近似</h2>
+<h2>2-Approximation for Vertex Cover</h2>
 
 <p>The <strong>Minimum Vertex Cover</strong> problem asks for the smallest set of vertices that "covers" all edges. It is NP-hard, but has an elegant 2-approximation.</p>
 
@@ -330,7 +330,7 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             id: 'ch21-sec03',
             title: 'Set Cover Greedy Approximation',
             content: `
-<h2>集合覆盖的贪心近似</h2>
+<h2>Greedy Approximation for Set Cover</h2>
 
 <div class="env-block definition">
 <div class="env-title">Definition 21.3 (Minimum Set Cover)</div>
@@ -496,7 +496,7 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             id: 'ch21-sec04',
             title: 'TSP with Triangle Inequality',
             content: `
-<h2>满足三角不等式的 TSP 近似</h2>
+<h2>TSP Approximation with Triangle Inequality</h2>
 
 <p>The <strong>Traveling Salesman Problem (TSP)</strong> asks for the shortest tour visiting all cities. While general TSP has no constant-factor approximation, the <em>metric</em> version (distances satisfy the triangle inequality) admits good approximations.</p>
 
@@ -722,7 +722,7 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             id: 'ch21-sec05',
             title: 'Randomized Algorithms',
             content: `
-<h2>随机化算法</h2>
+<h2>Randomized Algorithms</h2>
 
 <p>Randomized algorithms use random choices to achieve good expected performance or high-probability guarantees. They are often simpler and faster than deterministic alternatives.</p>
 

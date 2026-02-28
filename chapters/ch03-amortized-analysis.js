@@ -1,12 +1,12 @@
 // ============================================================
-// Chapter 3 · 摊还分析
+// Chapter 3 · Amortized Analysis
 // Amortized Analysis
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch03',
     number: 3,
-    title: '摊还分析',
+    title: 'Amortized Analysis',
     subtitle: 'Amortized Analysis',
     sections: [
         // --------------------------------------------------------
@@ -14,8 +14,8 @@ window.CHAPTERS.push({
         // --------------------------------------------------------
         {
             id: 'ch03-sec01',
-            title: '动机与聚合法',
-            content: `<h2>动机与聚合法</h2>
+            title: 'Motivation & Aggregate Method',
+            content: `<h2>Motivation & Aggregate Method</h2>
 <p>Worst-case analysis sometimes paints a misleadingly pessimistic picture. Consider a <strong>dynamic array</strong> (like Python's <code>list</code> or C++'s <code>vector</code>): most <code>append</code> operations take \\(O(1)\\), but occasionally the array must be resized, costing \\(O(n)\\). If we charge \\(O(n)\\) to every operation, we dramatically overestimate the total cost.</p>
 
 <p><strong>Amortized analysis</strong> provides a tighter bound by averaging over a <em>sequence</em> of operations, without assuming anything about the input distribution.</p>
@@ -201,8 +201,8 @@ $$\\hat{c} = \\frac{\\sum_{i=1}^{n} c_i}{n}.$$
         // --------------------------------------------------------
         {
             id: 'ch03-sec02',
-            title: '核算法',
-            content: `<h2>核算法 (Accounting Method)</h2>
+            title: 'Accounting Method',
+            content: `<h2>Accounting Method</h2>
 <p>The accounting method assigns <em>credits</em> to individual operations. Some operations are overcharged (they "save" credits), and the excess credits pay for later expensive operations.</p>
 
 <div class="env-block definition">
@@ -410,8 +410,8 @@ $$\\sum_{i=1}^{n} \\hat{c}_i \\ge \\sum_{i=1}^{n} c_i \\quad \\text{for all } n.
         // --------------------------------------------------------
         {
             id: 'ch03-sec03',
-            title: '势能法',
-            content: `<h2>势能法 (Potential Method)</h2>
+            title: 'Potential Method',
+            content: `<h2>Potential Method</h2>
 <p>The potential method is the most powerful and general amortized analysis technique. It defines a <strong>potential function</strong> on the data structure state, analogous to potential energy in physics.</p>
 
 <div class="env-block definition">
@@ -609,8 +609,8 @@ $$\\sum_{i=1}^n \\hat{c}_i = \\sum_{i=1}^n c_i + \\Phi(D_n) - \\Phi(D_0) \\ge \\
         // --------------------------------------------------------
         {
             id: 'ch03-sec04',
-            title: '案例：二进制计数器',
-            content: `<h2>案例：二进制计数器</h2>
+            title: 'Case Study: Binary Counter',
+            content: `<h2>Case Study: Binary Counter</h2>
 <p>The binary counter is a classic example that beautifully illustrates all three amortized analysis methods.</p>
 
 <div class="env-block definition">
@@ -856,8 +856,8 @@ INCREMENT(A, k)
         // --------------------------------------------------------
         {
             id: 'ch03-sec05',
-            title: '案例：动态表的扩展与收缩',
-            content: `<h2>案例：动态表的扩展与收缩</h2>
+            title: 'Case Study: Dynamic Table Expansion & Contraction',
+            content: `<h2>Case Study: Dynamic Table Expansion & Contraction</h2>
 <p>The dynamic array example becomes much more subtle when we also allow <strong>deletions</strong> that can trigger <strong>shrinking</strong>. Naive strategies can lead to <em>thrashing</em> &mdash; repeatedly expanding and shrinking.</p>
 
 <div class="env-block definition">

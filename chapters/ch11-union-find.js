@@ -1,19 +1,19 @@
 // ============================================================
-// Ch 11 · 并查集 — Union-Find / Disjoint Sets
+// Ch 11 · Union-Find / Disjoint Sets
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch11',
     number: 11,
-    title: '并查集',
+    title: 'Union-Find',
     subtitle: 'Union-Find / Disjoint Sets',
     sections: [
         // ============================================================
-        // Section 1 : 不相交集合运算 — Disjoint-Set Operations
+        // Section 1 : Disjoint-Set Operations
         // ============================================================
         {
             id: 'ch11-sec01',
-            title: '不相交集合运算',
+            title: 'Disjoint-Set Operations',
             content: `<h2>Disjoint-Set Operations</h2>
 <p>The <strong>disjoint-set</strong> (union-find) data structure maintains a collection of disjoint dynamic sets \\(\\mathcal{S} = \\{S_1, S_2, \\ldots, S_k\\}\\). Each set has a <em>representative</em> element.</p>
 
@@ -241,11 +241,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 2 : 按秩合并 — Union by Rank
+        // Section 2 : Union by Rank
         // ============================================================
         {
             id: 'ch11-sec02',
-            title: '按秩合并',
+            title: 'Union by Rank',
             content: `<h2>Union by Rank</h2>
 <p>The first optimization: always attach the shorter tree under the taller tree's root.</p>
 
@@ -458,11 +458,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 3 : 路径压缩 — Path Compression
+        // Section 3 : Path Compression
         // ============================================================
         {
             id: 'ch11-sec03',
-            title: '路径压缩',
+            title: 'Path Compression',
             content: `<h2>Path Compression</h2>
 <p>The second optimization: during Find, make every node on the find path point directly to the root.</p>
 
@@ -692,11 +692,11 @@ window.CHAPTERS.push({
             ]
         },
         // ============================================================
-        // Section 4 : 逆阿克曼函数分析 — Inverse Ackermann Analysis
+        // Section 4 : Inverse Ackermann Analysis
         // ============================================================
         {
             id: 'ch11-sec04',
-            title: '逆阿克曼函数分析',
+            title: 'Inverse Ackermann Analysis',
             content: `<h2>Inverse Ackermann Analysis</h2>
 <p>The amortized analysis of union-find with both optimizations is one of the most sophisticated in computer science, due to Tarjan (1975).</p>
 
@@ -888,11 +888,11 @@ $$\\alpha(n) = \\min\\{k \\ge 1 : A(k, 1) \\ge n\\}$$
             ]
         },
         // ============================================================
-        // Section 5 : 应用 — Applications
+        // Section 5 : Applications
         // ============================================================
         {
             id: 'ch11-sec05',
-            title: '应用',
+            title: 'Applications',
             content: `<h2>Applications of Union-Find</h2>
 <p>Union-find is a fundamental building block for many algorithms. Its near-constant-time operations make it the tool of choice whenever we need to dynamically track connected components.</p>
 

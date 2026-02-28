@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch20',
     number: 20,
-    title: 'NP完全性与归约',
+    title: 'NP-Completeness & Reductions',
     subtitle: 'NP-Completeness & Reductions',
     sections: [
 
@@ -13,7 +13,7 @@ window.CHAPTERS.push({
             id: 'ch20-sec01',
             title: 'P, NP, and co-NP',
             content: `
-<h2>P, NP 与 co-NP</h2>
+<h2>P, NP and co-NP</h2>
 
 <p>Complexity theory classifies decision problems by the computational resources needed to solve or verify them. The central question — <strong>P vs NP</strong> — is the most important open problem in computer science.</p>
 
@@ -172,7 +172,7 @@ $$x \\in L \\iff \\exists\\, c \\in \\{0,1\\}^{p(|x|)} \\text{ such that } V(x, 
             id: 'ch20-sec02',
             title: 'Polynomial Reductions',
             content: `
-<h2>多项式归约 (Polynomial Reductions)</h2>
+<h2>Polynomial Reductions</h2>
 
 <p>Reductions are the fundamental tool for comparing the computational difficulty of problems. If we can transform one problem into another efficiently, then solving the second also solves the first.</p>
 
@@ -401,7 +401,7 @@ $$x \\in A \\iff f(x) \\in B.$$
             id: 'ch20-sec03',
             title: 'Cook-Levin Theorem',
             content: `
-<h2>Cook-Levin 定理</h2>
+<h2>Cook-Levin Theorem</h2>
 
 <p>The foundation of NP-completeness theory is the remarkable theorem of Cook (1971) and Levin (1973), which established the first NP-complete problem.</p>
 
@@ -593,7 +593,7 @@ $$(l_1 \\vee l_2 \\vee y_1) \\wedge (\\overline{y_1} \\vee l_3 \\vee y_2) \\wedg
             id: 'ch20-sec04',
             title: 'Classic NP-Complete Problems',
             content: `
-<h2>经典NP完全问题</h2>
+<h2>Classic NP-Complete Problems</h2>
 
 <p>Starting from SAT and 3-SAT, a rich web of NP-complete problems has been established through reductions. Here are the most important ones.</p>
 
@@ -862,7 +862,7 @@ $$(l_1 \\vee l_2 \\vee y_1) \\wedge (\\overline{y_1} \\vee l_3 \\vee y_2) \\wedg
             id: 'ch20-sec05',
             title: 'Reduction Techniques & Practice',
             content: `
-<h2>归约技巧与实践</h2>
+<h2>Reduction Techniques & Practice</h2>
 
 <p>Designing reductions is both an art and a science. Here we discuss common techniques and practice with several important reductions.</p>
 

@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch14',
     number: 14,
-    title: '最短路径',
+    title: 'Shortest Paths',
     subtitle: 'Shortest Paths: Dijkstra, Bellman-Ford, Floyd-Warshall, and Johnson',
     sections: [
 
@@ -11,9 +11,9 @@ window.CHAPTERS.push({
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch14-sec01',
-        title: '1. 松弛框架 (Relaxation Framework)',
+        title: '1. Relaxation Framework',
         content: `
-<h2>松弛框架 — The Relaxation Framework</h2>
+<h2>The Relaxation Framework</h2>
 
 <p>
 All single-source shortest path algorithms share a common subroutine: <strong>edge relaxation</strong>.
@@ -198,9 +198,9 @@ reachable from the cycle. Dijkstra's algorithm assumes non-negative weights; Bel
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch14-sec02',
-        title: '2. Dijkstra 算法 (Dijkstra\'s Algorithm)',
+        title: '2. Dijkstra\'s Algorithm',
         content: `
-<h2>Dijkstra 算法 — Dijkstra's Algorithm</h2>
+<h2>Dijkstra's Algorithm</h2>
 
 <p>
 Dijkstra's algorithm (1959) solves the single-source shortest path problem for graphs with
@@ -430,9 +430,9 @@ might later be improved through a negative edge, violating the greedy invariant.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch14-sec03',
-        title: '3. Bellman-Ford 算法',
+        title: '3. Bellman-Ford Algorithm',
         content: `
-<h2>Bellman-Ford 算法</h2>
+<h2>Bellman-Ford Algorithm</h2>
 
 <p>
 The Bellman-Ford algorithm handles graphs with <strong>negative edge weights</strong> and can
@@ -707,9 +707,9 @@ there exists a path with \\(n\\) edges that is shorter, which implies a negative
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch14-sec04',
-        title: '4. DAG 最短路径 (Shortest Paths in DAGs)',
+        title: '4. Shortest Paths in DAGs',
         content: `
-<h2>DAG 最短路径 — Shortest Paths in DAGs</h2>
+<h2>Shortest Paths in DAGs</h2>
 
 <p>
 For <strong>directed acyclic graphs</strong>, we can solve single-source shortest paths
@@ -888,9 +888,9 @@ minimum project completion time.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch14-sec05',
-        title: '5. 全源最短路径 (All-Pairs Shortest Paths)',
+        title: '5. All-Pairs Shortest Paths',
         content: `
-<h2>全源最短路径 — All-Pairs Shortest Paths</h2>
+<h2>All-Pairs Shortest Paths</h2>
 
 <p>
 The all-pairs shortest paths (APSP) problem asks for \\(\\delta(u, v)\\) for every pair \\((u, v)\\).

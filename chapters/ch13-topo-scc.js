@@ -2,7 +2,7 @@ window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch13',
     number: 13,
-    title: '拓扑排序与强连通分量',
+    title: 'Topological Sort & Strongly Connected Components',
     subtitle: 'Topological Sort & Strongly Connected Components',
     sections: [
 
@@ -11,9 +11,9 @@ window.CHAPTERS.push({
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch13-sec01',
-        title: '1. 有向无环图 (DAGs and Properties)',
+        title: '1. DAGs and Properties',
         content: `
-<h2>有向无环图 — Directed Acyclic Graphs</h2>
+<h2>Directed Acyclic Graphs</h2>
 
 <p>
 A <strong>directed acyclic graph (DAG)</strong> is a directed graph with no cycles.
@@ -43,7 +43,7 @@ i.e., no sequence of distinct vertices \\(v_1, v_2, \\ldots, v_k\\) with edges
 <div class="env-title">Definition 13.2 (Topological Order)</div>
 <div class="env-body">
 <p>
-A <strong>topological ordering</strong> (拓扑排序) of a DAG \\(G = (V, E)\\) is a linear ordering
+A <strong>topological ordering</strong> of a DAG \\(G = (V, E)\\) is a linear ordering
 of all vertices such that for every edge \\((u, v) \\in E\\), vertex \\(u\\) appears before \\(v\\)
 in the ordering. Equivalently, it is a bijection \\(\\sigma: V \\to \\{1, \\ldots, n\\}\\) such that
 \\((u, v) \\in E \\implies \\sigma(u) < \\sigma(v)\\).
@@ -187,9 +187,9 @@ forming a cycle. Contradiction with DAG. Hence some vertex has in-degree 0.
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch13-sec02',
-        title: '2. DFS 拓扑排序 (Topological Sort via DFS)',
+        title: '2. Topological Sort via DFS',
         content: `
-<h2>DFS 拓扑排序 — Topological Sort via DFS</h2>
+<h2>Topological Sort via DFS</h2>
 
 <p>
 The simplest topological sort algorithm runs DFS and outputs vertices in
@@ -394,9 +394,9 @@ In all valid cases, \\(f[u] > f[v]\\). \\(\\square\\)
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch13-sec03',
-        title: '3. Kahn 算法 (BFS-Based Topological Sort)',
+        title: '3. Kahn\'s Algorithm (BFS-Based Topological Sort)',
         content: `
-<h2>Kahn 算法 — BFS-Based Topological Sort</h2>
+<h2>Kahn\'s Algorithm — BFS-Based Topological Sort</h2>
 
 <p>
 Kahn's algorithm (1962) takes a different approach: it repeatedly removes vertices
@@ -589,15 +589,15 @@ If a priority queue is used instead of a regular queue, Kahn's produces the
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch13-sec04',
-        title: '4. Kosaraju 算法 (SCC via Two-Pass DFS)',
+        title: '4. Kosaraju\'s Algorithm (SCC via Two-Pass DFS)',
         content: `
-<h2>Kosaraju 算法 — Strongly Connected Components</h2>
+<h2>Kosaraju\'s Algorithm — Strongly Connected Components</h2>
 
 <div class="env-block definition">
 <div class="env-title">Definition 13.3 (Strongly Connected)</div>
 <div class="env-body">
 <p>
-In a directed graph, vertices \\(u\\) and \\(v\\) are <strong>strongly connected</strong> (强连通)
+In a directed graph, vertices \\(u\\) and \\(v\\) are <strong>strongly connected</strong>
 if there exist paths \\(u \\rightsquigarrow v\\) and \\(v \\rightsquigarrow u\\).
 A <strong>strongly connected component (SCC)</strong> is a maximal set of mutually strongly connected vertices.
 </p>
@@ -608,7 +608,7 @@ A <strong>strongly connected component (SCC)</strong> is a maximal set of mutual
 <div class="env-title">Definition 13.4 (Component Graph)</div>
 <div class="env-body">
 <p>
-The <strong>component graph</strong> (分量图) \\(G^{\\text{SCC}} = (V^{\\text{SCC}}, E^{\\text{SCC}})\\) is obtained
+The <strong>component graph</strong> \\(G^{\\text{SCC}} = (V^{\\text{SCC}}, E^{\\text{SCC}})\\) is obtained
 by contracting each SCC into a single super-vertex. The component graph is always a <strong>DAG</strong>.
 </p>
 </div>
@@ -826,9 +826,9 @@ SCC becomes a sink, preventing escape to other components).
     // ═══════════════════════════════════════════════════════════════════════════
     {
         id: 'ch13-sec05',
-        title: '5. Tarjan 算法 (SCC via Single-Pass DFS)',
+        title: '5. Tarjan\'s Algorithm (SCC via Single-Pass DFS)',
         content: `
-<h2>Tarjan 算法 — Single-Pass SCC Algorithm</h2>
+<h2>Tarjan\'s Algorithm — Single-Pass SCC Algorithm</h2>
 
 <p>
 Tarjan's algorithm (1972) finds all SCCs in a single DFS pass using a clever

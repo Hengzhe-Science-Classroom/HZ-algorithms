@@ -1,19 +1,19 @@
 // ============================================================
-// Ch 10 · 哈希表与跳表 — Hash Tables & Skip Lists
+// Ch 10 · Hash Tables & Skip Lists
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch10',
     number: 10,
-    title: '哈希表与跳表',
+    title: 'Hash Tables & Skip Lists',
     subtitle: 'Hash Tables & Skip Lists',
     sections: [
         // ============================================================
-        // Section 1 : 哈希函数 — Hash Functions
+        // Section 1 : Hash Functions
         // ============================================================
         {
             id: 'ch10-sec01',
-            title: '哈希函数',
+            title: 'Hash Functions',
             content: `<h2>Hash Functions</h2>
 <p>A <strong>hash table</strong> maps keys from a large universe \\(U\\) to a table of size \\(m\\) via a hash function \\(h: U \\to \\{0, 1, \\ldots, m-1\\}\\). The goal is \\(O(1)\\) expected-time operations.</p>
 
@@ -146,11 +146,11 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             ]
         },
         // ============================================================
-        // Section 2 : 碰撞处理 — Collision Resolution
+        // Section 2 : Collision Resolution
         // ============================================================
         {
             id: 'ch10-sec02',
-            title: '碰撞处理',
+            title: 'Collision Resolution',
             content: `<h2>Collision Resolution</h2>
 
 <h3>Chaining</h3>
@@ -374,11 +374,11 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             ]
         },
         // ============================================================
-        // Section 3 : 完美哈希与布谷鸟哈希 — Perfect & Cuckoo Hashing
+        // Section 3 : Perfect & Cuckoo Hashing
         // ============================================================
         {
             id: 'ch10-sec03',
-            title: '完美哈希与布谷鸟哈希',
+            title: 'Perfect & Cuckoo Hashing',
             content: `<h2>Perfect Hashing & Cuckoo Hashing</h2>
 
 <h3>Perfect Hashing</h3>
@@ -572,11 +572,11 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             ]
         },
         // ============================================================
-        // Section 4 : 跳表 — Skip Lists
+        // Section 4 : Skip Lists
         // ============================================================
         {
             id: 'ch10-sec04',
-            title: '跳表',
+            title: 'Skip Lists',
             content: `<h2>Skip Lists</h2>
 <p>A <strong>skip list</strong> (Pugh, 1990) is a randomized data structure that provides \\(O(\\log n)\\) expected-time search, insert, and delete — comparable to balanced BSTs but simpler to implement.</p>
 
@@ -804,11 +804,11 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             ]
         },
         // ============================================================
-        // Section 5 : 布隆过滤器 — Bloom Filters
+        // Section 5 : Bloom Filters
         // ============================================================
         {
             id: 'ch10-sec05',
-            title: '布隆过滤器',
+            title: 'Bloom Filters',
             content: `<h2>Bloom Filters</h2>
 <p>A <strong>Bloom filter</strong> (Bloom, 1970) is a space-efficient probabilistic data structure for set membership queries. It may yield false positives but never false negatives.</p>
 

@@ -1,12 +1,12 @@
 // ============================================================
-// Chapter 1 · 渐近分析
+// Chapter 1 · Asymptotic Analysis
 // Asymptotic Notation & Growth of Functions
 // ============================================================
 window.CHAPTERS = window.CHAPTERS || [];
 window.CHAPTERS.push({
     id: 'ch01',
     number: 1,
-    title: '渐近分析',
+    title: 'Asymptotic Analysis',
     subtitle: 'Asymptotic Notation & Growth of Functions',
     sections: [
         // --------------------------------------------------------
@@ -14,8 +14,8 @@ window.CHAPTERS.push({
         // --------------------------------------------------------
         {
             id: 'ch01-sec01',
-            title: 'O, \u03A9, \u0398 记号',
-            content: `<h2>\\(O\\), \\(\\Omega\\), \\(\\Theta\\) 记号</h2>
+            title: 'O, \u03A9, \u0398 Notation',
+            content: `<h2>\\(O\\), \\(\\Omega\\), \\(\\Theta\\) Notation</h2>
 <p>Asymptotic notation provides a mathematical language for describing the growth rate of functions, abstracting away constant factors and lower-order terms. It is the backbone of algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -169,8 +169,8 @@ $$c_1 \\cdot g(n) \\le f(n) \\le c_2 \\cdot g(n) \\quad \\text{for all } n \\ge 
         // --------------------------------------------------------
         {
             id: 'ch01-sec02',
-            title: 'o 和 \u03C9 记号',
-            content: `<h2>\\(o\\) 和 \\(\\omega\\) 记号</h2>
+            title: 'o and \u03C9 Notation',
+            content: `<h2>\\(o\\) and \\(\\omega\\) Notation</h2>
 <p>The "big" notations describe asymptotic bounds that may or may not be tight. The "little" notations describe <em>strict</em> asymptotic relationships.</p>
 
 <div class="env-block definition">
@@ -307,8 +307,8 @@ $$0 \\le c \\cdot g(n) < f(n) \\quad \\text{for all } n \\ge n_0.$$
         // --------------------------------------------------------
         {
             id: 'ch01-sec03',
-            title: '标准增长类',
-            content: `<h2>标准增长类</h2>
+            title: 'Standard Growth Classes',
+            content: `<h2>Standard Growth Classes</h2>
 <p>In algorithm analysis, a small number of growth classes appear repeatedly. Understanding their relative order is essential.</p>
 
 <div class="env-block theorem">
@@ -513,8 +513,8 @@ $$1 \\prec \\log \\log n \\prec \\log n \\prec \\sqrt{n} \\prec n \\prec n \\log
         // --------------------------------------------------------
         {
             id: 'ch01-sec04',
-            title: '极限方法',
-            content: `<h2>极限方法</h2>
+            title: 'Limit Method',
+            content: `<h2>Limit Method</h2>
 <p>In many cases, the most elegant way to determine asymptotic relationships is through limits. This section develops the key limit-based techniques.</p>
 
 <div class="env-block theorem">
@@ -660,8 +660,8 @@ $$\\lim_{n \\to \\infty} \\frac{f(n)}{g(n)} = \\lim_{n \\to \\infty} \\frac{f'(n
         // --------------------------------------------------------
         {
             id: 'ch01-sec05',
-            title: '代码片段分析',
-            content: `<h2>代码片段分析</h2>
+            title: 'Analyzing Code Fragments',
+            content: `<h2>Analyzing Code Fragments</h2>
 <p>The ultimate purpose of asymptotic notation is to analyze the running time of algorithms. Let us develop systematic techniques for analyzing common code patterns.</p>
 
 <div class="env-block definition">
