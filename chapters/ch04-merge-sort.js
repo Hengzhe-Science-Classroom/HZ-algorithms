@@ -10,6 +10,9 @@ window.CHAPTERS.push({
  id: 'ch04-sec01',
  title: 'The Merge Sort Algorithm',
  content: `<h2>The Merge Sort Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapters 0 through 3 built the analysis toolkit; now we put it to work. Divide-and-conquer is the first major algorithm design paradigm we study in depth. Its poster child is Merge Sort, which achieves the optimal \(O(n \log n)\) time by splitting, conquering recursively, and merging. This chapter develops the paradigm through Merge Sort, then applies it to counting inversions and the closest pair problem.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the Merge Sort algorithm itself: how it splits the array, recurses on each half, and merges the sorted halves back together. Understanding the merge procedure in detail is essential, as the same merging idea reappears in many divide-and-conquer algorithms.</p></div></div>
+
 <p>Merge Sort is a classic example of the divide-and-conquer paradigm applied to sorting. It recursively splits an array in half, sorts each half, then merges them, guaranteeing \\(O(n \\log n)\\) worst-case time complexity. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Merge Sort)</div><div class="env-body">
@@ -193,6 +196,8 @@ window.CHAPTERS.push({
  id: 'ch04-sec02',
  title: 'Correctness & Complexity Analysis',
  content: `<h2>correctness and </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>With the algorithm defined, we now prove it correct using induction and analyze its time complexity using the recurrence \(T(n) = 2T(n/2) + \Theta(n)\), which we can solve with the Master Theorem from Chapter 2.</p></div></div>
+
 
 <h3>correctness proof</h3>
 <p>Merge Sort correctness can use<strong>not </strong>proof. </p>
@@ -312,6 +317,8 @@ $$T(n) = 2T(n/2) + \\Theta(n)$$
  id: 'ch04-sec03',
  title: 'Divide-and-Conquer Framework Visualization',
  content: `<h2>divide and conquer </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Merge Sort is just one instance of a general pattern. This section abstracts the divide-and-conquer framework and shows how different choices of splitting, conquering, and combining yield different algorithms with different recurrences.</p></div></div>
+
 <p>Merge Sort <strong>divide and conquer(Divide and Conquer)</strong>: </p>
 
 <div class="env-block definition"><div class="env-title">Definition (Divide and Conquer)</div><div class="env-body">
@@ -477,6 +484,8 @@ $$T(n) = aT(n/b) + f(n)$$
  id: 'ch04-sec04',
  title: 'Counting Inversions',
  content: `<h2>Counting Inversions</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Our first non-sorting application of divide-and-conquer: counting inversions. By piggybacking on the merge step, we can count all inversions in \(O(n \log n)\) time, a technique with applications in ranking and recommendation systems.</p></div></div>
+
 <p>is divide and conquer in sorting use. given array \\(A[1.n]\\), is satisfy \\(i <j\\) \\(A[i]> A[j]\\) \\((i, j)\\). </p>
 
 <div class="env-block definition"><div class="env-title">Definition (Inversions)</div><div class="env-body">
@@ -660,6 +669,8 @@ $$\\text{inv}(A) = |\\{(i, j): 1 \\leq i <j \\leq n \\text{and} A[i]> A[j]\\}|$$
  id: 'ch04-sec05',
  title: 'Closest Pair of Points',
  content: `<h2>Closest Pair of Points</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The closest pair problem in two dimensions shows divide-and-conquer at its most subtle. The key insight is that the "strip" near the dividing line contains only a constant number of candidate pairs, keeping the combine step linear.</p></div></div>
+
 <p>given \\(n\\), distance. algorithm need check all \\(\\binom{n}{2}\\), time complexity \\(O(n^2)\\). use divide and conquer can in \\(O(n \\log n)\\) solve. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Closest Pair)</div><div class="env-body">
@@ -685,7 +696,8 @@ $$\\text{inv}(A) = |\\{(i, j): 1 \\leq i <j \\leq n \\text{and} A[i]> A[j]\\}|$$
 
 <div class="viz-placeholder" data-viz="ch04-viz-closest-pair"></div>
 
-<div class="viz-placeholder" data-viz="ch04-viz-strip-analysis"></div>`,
+<div class="viz-placeholder" data-viz="ch04-viz-strip-analysis"></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Merge Sort always splits evenly, giving predictable \(O(n \log n)\) performance. But what if we partition around a pivot element instead? Chapter 5 explores Quicksort, where the partition is data-dependent, leading to fascinating questions about worst-case versus expected performance and the power of randomization.</p></div></div>`,
  visualizations: [
  {
  id: 'ch04-viz-closest-pair',

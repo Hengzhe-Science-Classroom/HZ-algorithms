@@ -14,6 +14,9 @@ window.CHAPTERS.push({
             title: 'P, NP, and co-NP',
             content: `
 <h2>P, NP and co-NP</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Throughout Chapters 4 through 19, we designed polynomial-time algorithms for a wide variety of problems. But some problems, such as the Travelling Salesman, Boolean satisfiability, and graph coloring, seem to require exponential time. Are they truly harder, or are we just not clever enough? NP-completeness theory, one of the great intellectual achievements of computer science, provides a framework for answering this question. This chapter develops the theory of P, NP, polynomial reductions, and the Cook-Levin theorem.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We define the complexity classes P (problems solvable in polynomial time), NP (problems whose solutions are verifiable in polynomial time), and co-NP. The central question, whether P = NP, is the most important open problem in computer science.</p></div></div>
+
 
 <p>Complexity theory classifies decision problems by the computational resources needed to solve or verify them. The central question — <strong>P vs NP</strong> — is the most important open problem in computer science.</p>
 
@@ -173,6 +176,8 @@ $$x \\in L \\iff \\exists\\, c \\in \\{0,1\\}^{p(|x|)} \\text{ such that } V(x, 
             title: 'Polynomial Reductions',
             content: `
 <h2>Polynomial Reductions</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Polynomial reductions allow us to show that one problem is "at least as hard as" another. If we can reduce problem A to problem B in polynomial time, then a polynomial algorithm for B would give one for A as well. This is the mechanism for proving NP-hardness.</p></div></div>
+
 
 <p>Reductions are the fundamental tool for comparing the computational difficulty of problems. If we can transform one problem into another efficiently, then solving the second also solves the first.</p>
 
@@ -402,6 +407,8 @@ $$x \\in A \\iff f(x) \\in B.$$
             title: 'Cook-Levin Theorem',
             content: `
 <h2>Cook-Levin Theorem</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Cook-Levin theorem proves that SAT (Boolean satisfiability) is NP-complete: it is in NP, and every NP problem reduces to it. This establishes the first NP-complete problem, from which all others follow by chains of reductions.</p></div></div>
+
 
 <p>The foundation of NP-completeness theory is the remarkable theorem of Cook (1971) and Levin (1973), which established the first NP-complete problem.</p>
 
@@ -594,6 +601,8 @@ $$(l_1 \\vee l_2 \\vee y_1) \\wedge (\\overline{y_1} \\vee l_3 \\vee y_2) \\wedg
             title: 'Classic NP-Complete Problems',
             content: `
 <h2>Classic NP-Complete Problems</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>From SAT, we build a web of NP-complete problems by reduction: 3-SAT, CLIQUE, VERTEX COVER, INDEPENDENT SET, SUBSET SUM, HAMILTONIAN CYCLE, and more. Each reduction illuminates a structural connection between seemingly different problems.</p></div></div>
+
 
 <p>Starting from SAT and 3-SAT, a rich web of NP-complete problems has been established through reductions. Here are the most important ones.</p>
 
@@ -863,6 +872,8 @@ $$(l_1 \\vee l_2 \\vee y_1) \\wedge (\\overline{y_1} \\vee l_3 \\vee y_2) \\wedg
             title: 'Reduction Techniques & Practice',
             content: `
 <h2>Reduction Techniques & Practice</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Proving a new problem NP-complete is a practical skill. This section presents reduction techniques (gadgets, local replacement, component design) and walks through several complete proofs, preparing you to recognize and prove NP-completeness in new settings.</p></div></div>
+
 
 <p>Designing reductions is both an art and a science. Here we discuss common techniques and practice with several important reductions.</p>
 
@@ -916,7 +927,8 @@ $$(l_1 \\vee l_2 \\vee y_1) \\wedge (\\overline{y_1} \\vee l_3 \\vee y_2) \\wedg
   <li><strong>Heuristics:</strong> SAT solvers, branch-and-bound, local search — often work well in practice.</li>
   <li><strong>Special cases:</strong> Many NP-complete problems become polynomial on restricted inputs (e.g., 2-SAT, planar graphs).</li>
 </ol>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>NP-completeness tells us that exact polynomial-time solutions are unlikely. But we still need to solve these problems in practice. Chapter 21 explores two strategies for coping: approximation algorithms that guarantee near-optimal solutions in polynomial time, and randomized algorithms that use probabilistic techniques to solve or approximate hard problems efficiently.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch20-viz-gadget',

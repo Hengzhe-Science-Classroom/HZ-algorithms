@@ -15,6 +15,9 @@ window.CHAPTERS.push({
             id: 'ch08-sec01',
             title: 'Binary Heaps',
             content: `<h2>Binary Heaps</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>With the sorting arc complete (Chapters 4 through 7), we now turn to data structures. A priority queue maintains a dynamic set of elements with priorities, supporting efficient insertion and extraction of the maximum (or minimum). The heap is its canonical implementation, and it underpins algorithms from Heapsort to Dijkstra's shortest paths (Chapter 14) and Prim's MST (Chapter 15). This chapter develops heaps from the ground up.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the binary heap: a nearly complete binary tree stored in an array, where every node's key is at least as large as its children's. We develop the Insert and Extract-Max operations and prove their \(O(\log n)\) time bounds.</p></div></div>
+
 <p>A <strong>binary heap</strong> is a nearly complete binary tree stored compactly in an array. It supports efficient priority queue operations — insert and extract-min/max — in \\(O(\\log n)\\) time.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Max-Heap Property)</div><div class="env-body">
@@ -212,6 +215,8 @@ $$A[\\text{parent}(i)] \\ge A[i]$$
             id: 'ch08-sec02',
             title: 'Building a Heap',
             content: `<h2>Building a Heap in \\(O(n)\\)</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>A natural question: can we build a heap from an unsorted array faster than \(n\) individual insertions? The bottom-up Build-Heap procedure achieves \(O(n)\) time, a result whose proof uses a beautiful summation argument.</p></div></div>
+
 <p>A naive approach inserts elements one by one in \\(O(n \\log n)\\). But we can build a heap from an unordered array in \\(O(n)\\) using bottom-up heapify.</p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm: BuildMaxHeap(A)</div><div class="env-body">
@@ -364,6 +369,8 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             id: 'ch08-sec03',
             title: 'Heapsort',
             content: `<h2>Heapsort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>With Build-Heap and Extract-Max, we can sort in-place: build a max-heap, then repeatedly extract the maximum. This is Heapsort, an \(O(n \log n)\) in-place sorting algorithm that complements Merge Sort and Quicksort.</p></div></div>
+
 <p>Heapsort combines BuildMaxHeap with repeated extract-max to sort in-place in \\(O(n \\log n)\\) worst-case time.</p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm: Heapsort(A)</div><div class="env-body">
@@ -517,6 +524,8 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             id: 'ch08-sec04',
             title: 'd-ary Heaps',
             content: `<h2>d-ary Heaps</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>What if each node has more than two children? A \(d\)-ary heap trades deeper trees for fewer levels, optimizing the tradeoff between Insert (\(O(\log_d n)\)) and Extract-Max (\(O(d \log_d n)\)). The optimal choice of \(d\) depends on the operation mix.</p></div></div>
+
 <p>A <strong>d-ary heap</strong> generalizes binary heaps: each node has at most \\(d\\) children instead of 2.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (d-ary Heap)</div><div class="env-body">
@@ -709,6 +718,8 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
             id: 'ch08-sec05',
             title: 'Fibonacci Heaps Overview',
             content: `<h2>Fibonacci Heaps</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Fibonacci heaps support Decrease-Key in \(O(1)\) amortized time, which is critical for achieving optimal bounds in Dijkstra's and Prim's algorithms. This section provides an overview of their lazy structure and the amortized analysis (from Chapter 3) that makes them work.</p></div></div>
+
 <p>A <strong>Fibonacci heap</strong> is a collection of heap-ordered trees that achieves excellent amortized bounds, making it ideal for algorithms like Dijkstra and Prim.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Fibonacci Heap)</div><div class="env-body">
@@ -765,7 +776,8 @@ $$\\sum_{h=0}^{\\lfloor \\log n \\rfloor} \\left\\lceil \\frac{n}{2^{h+1}} \\rig
 <tr><td style="padding:4px 10px;">Merge</td><td style="padding:4px 10px;">\\(O(n)\\)</td><td style="padding:4px 10px;">\\(O(n)\\)</td><td style="padding:4px 10px;">\\(O(1)^*\\)</td></tr>
 </table>
 <p>(\\(^*\\) = amortized)</p>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Heaps give us efficient access to the maximum or minimum, but what about searching for arbitrary keys? Chapter 9 introduces binary search trees and their balanced variants (Red-Black and AVL trees), which support search, insert, delete, and order queries all in \(O(\log n)\) time.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch08-viz-fib-heap',

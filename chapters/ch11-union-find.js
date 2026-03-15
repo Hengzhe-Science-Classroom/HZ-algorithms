@@ -15,6 +15,9 @@ window.CHAPTERS.push({
             id: 'ch11-sec01',
             title: 'Disjoint-Set Operations',
             content: `<h2>Disjoint-Set Operations</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Hash tables (Chapter 10) handle dictionary operations; now we need a structure for a different problem: maintaining a partition of elements into disjoint sets, with efficient Union and Find operations. Union-Find (also called Disjoint Sets) solves this with near-constant amortized time per operation, using the elegant combination of union by rank and path compression. This structure is the backbone of Kruskal's MST algorithm (Chapter 15) and many other applications.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We define the three operations (Make-Set, Union, Find) and implement them using a forest of trees, where each tree represents one set. The naive version already provides useful functionality, but it can be slow.</p></div></div>
+
 <p>The <strong>disjoint-set</strong> (union-find) data structure maintains a collection of disjoint dynamic sets \\(\\mathcal{S} = \\{S_1, S_2, \\ldots, S_k\\}\\). Each set has a <em>representative</em> element.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Disjoint-Set ADT)</div><div class="env-body">
@@ -247,6 +250,8 @@ window.CHAPTERS.push({
             id: 'ch11-sec02',
             title: 'Union by Rank',
             content: `<h2>Union by Rank</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Our first optimization: always attach the shorter tree under the taller one during Union. Union by rank keeps the trees shallow, guaranteeing \(O(\log n)\) height and thus \(O(\log n)\) per Find operation.</p></div></div>
+
 <p>The first optimization: always attach the shorter tree under the taller tree's root.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Rank)</div><div class="env-body">
@@ -464,6 +469,8 @@ window.CHAPTERS.push({
             id: 'ch11-sec03',
             title: 'Path Compression',
             content: `<h2>Path Compression</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Our second optimization, path compression, makes every node on the Find path point directly to the root. Combined with union by rank, this yields an amortized cost of \(O(\alpha(n))\) per operation, where \(\alpha\) is the inverse Ackermann function.</p></div></div>
+
 <p>The second optimization: during Find, make every node on the find path point directly to the root.</p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm: Find with Path Compression</div><div class="env-body">
@@ -698,6 +705,8 @@ window.CHAPTERS.push({
             id: 'ch11-sec04',
             title: 'Inverse Ackermann Analysis',
             content: `<h2>Inverse Ackermann Analysis</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>What is \(\alpha(n)\), and why is it effectively constant? This section explores the Ackermann function's explosive growth, showing that its inverse \(\alpha(n) \le 4\) for any input that fits in the observable universe. The amortized analysis uses a potential function argument from Chapter 3.</p></div></div>
+
 <p>The amortized analysis of union-find with both optimizations is one of the most sophisticated in computer science, due to Tarjan (1975).</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Ackermann Function)</div><div class="env-body">
@@ -894,6 +903,8 @@ $$\\alpha(n) = \\min\\{k \\ge 1 : A(k, 1) \\ge n\\}$$
             id: 'ch11-sec05',
             title: 'Applications',
             content: `<h2>Applications of Union-Find</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Union-Find appears in surprisingly many contexts: connected components in dynamic graphs, Kruskal's MST algorithm, percolation theory, and image segmentation. This section surveys these applications and shows Union-Find in action.</p></div></div>
+
 <p>Union-find is a fundamental building block for many algorithms. Its near-constant-time operations make it the tool of choice whenever we need to dynamically track connected components.</p>
 
 <h3>1. Kruskal's MST Algorithm</h3>
@@ -929,7 +940,8 @@ $$\\alpha(n) = \\min\\{k \\ge 1 : A(k, 1) \\ge n\\}$$
 <tr><td style="padding:4px 10px;">Percolation</td><td style="padding:4px 10px;">\\(n^2\\) unions</td><td style="padding:4px 10px;">\\(O(n^2 \\alpha(n^2))\\)</td></tr>
 <tr><td style="padding:4px 10px;">LCA (offline)</td><td style="padding:4px 10px;">\\(n + q\\) ops</td><td style="padding:4px 10px;">\\(O((n+q)\\alpha(n))\\)</td></tr>
 </table>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>With the data structures arc complete (Chapters 8 through 11), we are ready to tackle graph algorithms. Chapter 12 introduces graph representations and the two fundamental traversal algorithms, BFS and DFS, which underpin nearly every graph algorithm in the chapters that follow.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch11-viz-connected-comp',

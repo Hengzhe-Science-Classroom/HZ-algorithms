@@ -12,6 +12,9 @@ window.CHAPTERS.push({
  id: 'ch18-sec01',
  title: 'Backtracking Algorithm Framework',
  content: `<h2>1. Backtracking Algorithm Framework</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>DP (Chapter 17) works beautifully when the state space is polynomial-sized. For problems where it is exponential, such as constraint satisfaction and combinatorial optimization, we need explicit search. Backtracking systematically explores the solution space and prunes branches that cannot lead to valid solutions. Branch-and-bound adds bounding functions to prune branches that cannot improve the best solution found so far. Together, they are the practical workhorses for solving NP-hard problems to optimality.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We develop the general backtracking framework: build a solution incrementally, check constraints at each step, and backtrack when a partial solution cannot be extended. The search tree structure makes it easy to reason about completeness and pruning effectiveness.</p></div></div>
+
 <p>backtracking (backtracking) is search problem solution space algorithm. it through solution, in when path not may solution <strong>pruning (prune)</strong>, from all solution space. </p>
 
 <div class="env-block definition">
@@ -176,6 +179,8 @@ window.CHAPTERS.push({
  id: 'ch18-sec02',
  title: 'N-Queens Problem',
  content: `<h2>2 N queen problem</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The N-Queens problem is the classic backtracking example: place \(N\) queens on an \(N \times N\) chessboard so that no two attack each other. The constraint-checking at each step dramatically prunes the search tree, illustrating backtracking's power.</p></div></div>
+
 <p>N queen problem is backtracking algorithm: in \\(N \\times N\\) place \\(N\\) queen, any two queen different row, different column, different diagonal. </p>
 
 <div class="env-block definition">
@@ -394,6 +399,8 @@ window.CHAPTERS.push({
  id: 'ch18-sec03',
  title: 'Subset Sum & Graph Coloring',
  content: `<h2>3 Subset Sum and Graph Coloring</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We apply backtracking to two more problems: Subset Sum (find a subset that sums to a target) and Graph Coloring (color vertices so no adjacent vertices share a color). These show how different constraint structures lead to different pruning strategies.</p></div></div>
+
 
 <h3>3.1 Subset Sum (Subset Sum)</h3>
 <p>given \\(S = \\{s_1, \\ldots, s_n\\}\\) value \\(T\\), determine is otherwise there exists \\(S\\) subset, its element exactly \\(T\\). </p>
@@ -706,6 +713,8 @@ window.CHAPTERS.push({
  id: 'ch18-sec04',
  title: 'Branch and Bound',
  content: `<h2>4 </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Branch-and-bound extends backtracking to optimization problems. By maintaining a global best solution and computing bounds on partial solutions, we prune entire subtrees that provably cannot improve the current best. The 0-1 knapsack serves as our first example.</p></div></div>
+
 <p> (Branch and Bound, B&B) is backtracking, use <strong>problem</strong>. it not only through constraint pruning, also through<strong> (bounding function)</strong> subtree may optimal value, if value not when known optimal solution, then subtree. </p>
 
 <div class="env-block definition">
@@ -915,6 +924,8 @@ window.CHAPTERS.push({
  id: 'ch18-sec05',
  title: 'TSP Branch and Bound',
  content: `<h2>5 TSP </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Travelling Salesman Problem (TSP) showcases branch-and-bound at its most sophisticated. We use lower bounds from MSTs (Chapter 15) or linear programming relaxations to prune the search, often reducing the explored space by orders of magnitude.</p></div></div>
+
 <p>Traveling Salesman Problem (TSP) is use. TSP is NP-hard, B&B through lower bound can in solution when. </p>
 
 <div class="env-block definition">
@@ -962,7 +973,8 @@ this lower bound is TSP optimal value efficient lower bound, because in each row
 <p><strong>backtracking:</strong>, \\(n \\le 12\\). </p>
 <p><strong>B&B:</strong> lower bound, \\(n \\le 30-50\\); more. </p>
 <p><strong> DP (Held-Karp):</strong> \\(O(2^n n^2)\\), \\(O(2^n n)\\), \\(n \\le 20\\) (). </p></div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Backtracking and branch-and-bound are powerful but ultimately search through exponential spaces. Chapter 19 introduces a different kind of optimization: network flow, where clever algorithms exploit graph structure to solve maximum flow and minimum cut problems in polynomial time.</p></div></div>`,
  visualizations: [
  {
  id: 'ch18-viz-tsp-bnb',

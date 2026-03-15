@@ -14,6 +14,9 @@ window.CHAPTERS.push({
         title: '1. Graph Representations',
         content: `
 <h2>Graph Representations</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>The data structures of Chapters 8 through 11 are tools; graphs are where they come alive. Graphs model relationships: social networks, road maps, dependencies, circuits. This chapter introduces graph representations and the two fundamental traversal algorithms, Breadth-First Search (BFS) and Depth-First Search (DFS), along with edge classification. These traversals are the building blocks for shortest paths (Chapter 14), MSTs (Chapter 15), topological sorting (Chapter 13), and much more.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Before we can run algorithms on graphs, we must store them. This section compares the adjacency matrix and adjacency list representations, analyzing the space and time tradeoffs that determine which to use for a given problem.</p></div></div>
+
 
 <p>
 A <strong>graph</strong> \(G = (V, E)\) consists of a set \(V\) of <em>vertices</em> and a set \(E\) of <em>edges</em>.
@@ -222,6 +225,8 @@ For directed graphs, \(\\sum_{v} \\text{in-deg}(v) = \\sum_{v} \\text{out-deg}(v
         title: '2. Breadth-First Search (BFS)',
         content: `
 <h2>Breadth-First Search</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>BFS explores a graph level by level, discovering all vertices at distance \(d\) before any at distance \(d+1\). It computes shortest paths in unweighted graphs and produces a BFS tree. The \(O(V + E)\) running time makes it a workhorse for graph exploration.</p></div></div>
+
 
 <p>
 Breadth-first search (BFS) explores a graph in "wavefronts": it visits all vertices at distance 1 from the source before those at distance 2, and so on.
@@ -538,6 +543,8 @@ all vertices at distance exactly \(k\) from the source.
         title: '3. Depth-First Search (DFS)',
         content: `
 <h2>Depth-First Search</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>DFS plunges as deep as possible along each branch before backtracking. It assigns discovery and finish times to each vertex, creating a temporal structure that reveals powerful information about the graph's structure.</p></div></div>
+
 
 <p>
 Depth-first search (DFS) explores as deeply as possible along each branch before backtracking.
@@ -763,6 +770,8 @@ Space: \(O(n)\) for the recursion stack (in the worst case, e.g., a path graph).
         title: '4. Edge Classification',
         content: `
 <h2>Edge Classification in DFS</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>DFS classifies every edge as a tree, back, forward, or cross edge. This classification is not just a curiosity: back edges detect cycles, and the absence of back edges characterizes DAGs (directed acyclic graphs), which are central to Chapter 13.</p></div></div>
+
 
 <p>
 DFS classifies every edge \((u, v)\) of the graph into one of four types, based on
@@ -978,6 +987,8 @@ being discovered after \(v\) finishes. Thus \(v\) cannot be black.
         title: '5. Applications of BFS & DFS',
         content: `
 <h2>Applications of BFS & DFS</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We close with applications: bipartiteness testing (BFS-based), cycle detection (DFS-based), and connected component computation. These applications demonstrate how BFS and DFS serve as subroutines in larger graph algorithms.</p></div></div>
+
 
 <h3>5.1 Cycle Detection</h3>
 
@@ -1055,7 +1066,8 @@ Both construct predecessor arrays \(\\pi[v]\) that can be traced back to recover
 <div class="viz-placeholder" data-viz="ch12-viz-cycle"></div>
 
 <div class="viz-placeholder" data-viz="ch12-viz-components"></div>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>DFS reveals the temporal structure of a graph through discovery and finish times. Chapter 13 exploits this structure for two fundamental problems: topological sorting of DAGs and decomposing directed graphs into strongly connected components.</p></div></div>`,
         visualizations: [
         {
             id: 'ch12-viz-bipartite',

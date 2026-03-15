@@ -16,6 +16,9 @@ window.CHAPTERS.push({
             id: 'ch00-sec01',
             title: 'What Is an Algorithm',
             content: `<h2>What Is an Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Welcome to the study of algorithms. This opening chapter lays the foundation for everything that follows: we define what an algorithm is, develop tools for proving correctness, introduce the computational model we will use for analysis, and get our first taste of running time analysis. By the end, you will see why the quest for efficient algorithms matters and what lies ahead in this course.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>In this section, we pin down the formal definition of an algorithm and introduce the sorting problem as our running example. We also meet Insertion Sort, the simplest sorting algorithm, which will serve as the subject for the analysis techniques developed in the rest of the chapter.</p></div></div>
+
 <p>An <strong>algorithm</strong> is a well-defined, finite sequence of instructions that transforms an input into a desired output. This deceptively simple definition hides a rich tapestry of ideas that have occupied mathematicians and computer scientists for over a century.</p>
 
 <div class="env-block definition">
@@ -189,6 +192,8 @@ window.CHAPTERS.push({
             id: 'ch00-sec02',
             title: 'Correctness & Loop Invariants',
             content: `<h2>Correctness & Loop Invariants</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Having defined Insertion Sort, a natural question arises: how do we <em>know</em> it works? This section introduces loop invariants, the primary tool for proving iterative algorithms correct, and applies it to Insertion Sort.</p></div></div>
+
 <p>How do we <em>prove</em> that an algorithm is correct? For iterative algorithms, the primary tool is the <strong>loop invariant</strong>.</p>
 
 <div class="env-block definition">
@@ -408,6 +413,8 @@ INSERTION-SORT(A, n)
             id: 'ch00-sec03',
             title: 'RAM Model of Computation',
             content: `<h2>RAM Model of Computation</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Correctness is only half the story. To measure efficiency, we need a precise model of what operations cost. This section introduces the Random Access Machine (RAM) model, which provides the foundation for all the running time analyses in this course.</p></div></div>
+
 <p>To analyze algorithms rigorously, we need a precise model of computation that tells us what operations are available and how much they cost. The <strong>Random Access Machine (RAM)</strong> model is the standard abstraction used throughout algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -603,6 +610,8 @@ INSERTION-SORT(A, n)
             id: 'ch00-sec04',
             title: 'Running Time Analysis of Insertion Sort',
             content: `<h2>Running Time Analysis of Insertion Sort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>With the RAM model in hand, we can now analyze Insertion Sort rigorously. This section derives best-case, worst-case, and average-case running times, revealing the quadratic cost that motivates the search for faster algorithms.</p></div></div>
+
 <p>Let us put the RAM model to work and derive precise running time bounds for Insertion Sort.</p>
 
 <div class="env-block theorem">
@@ -818,6 +827,8 @@ $$\\sum_{j=2}^{n}(j-1) = 1 + 2 + \\cdots + (n-1) = \\frac{n(n-1)}{2} = \\Theta(n
             id: 'ch00-sec05',
             title: 'From Insertion Sort to Better Algorithms',
             content: `<h2>From Insertion Sort to Better Algorithms</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Insertion Sort is \(\Theta(n^2)\), but can we do better? This final section previews the divide-and-conquer paradigm through Merge Sort and outlines the algorithmic landscape we will explore in subsequent chapters.</p></div></div>
+
 <p>Insertion Sort's \\(\\Theta(n^2)\\) worst-case time is impractical for large inputs. Can we do better? The answer, as we will see in later chapters, is a resounding <strong>yes</strong>: algorithms like Merge Sort achieve \\(\\Theta(n \\log n)\\) time, which is provably optimal for comparison-based sorting.</p>
 
 <div class="env-block theorem">
@@ -860,7 +871,8 @@ $$\\sum_{j=2}^{n}(j-1) = 1 + 2 + \\cdots + (n-1) = \\frac{n(n-1)}{2} = \\Theta(n
 <li><strong>Backtracking</strong>: systematically explore the solution space, pruning infeasible branches.</li>
 </ul>
 </div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>We have established the foundations: algorithms, correctness proofs, the RAM model, and basic running time analysis. In Chapter 1, we formalize the language of efficiency with asymptotic notation (\(O, \Omega, \Theta\)), giving us the mathematical vocabulary to compare algorithms precisely.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch00-viz-sort-comparison',

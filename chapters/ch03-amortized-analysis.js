@@ -16,6 +16,9 @@ window.CHAPTERS.push({
             id: 'ch03-sec01',
             title: 'Motivation & Aggregate Method',
             content: `<h2>Motivation & Aggregate Method</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapters 1 and 2 equipped us to analyze individual algorithm calls. But what about data structures that support a <em>sequence</em> of operations, where some operations are cheap and others are expensive? Amortized analysis looks at the average cost per operation over a worst-case sequence, revealing that the expensive operations are rare enough to be "paid for" by the cheap ones. This chapter completes our analysis toolkit before we move on to algorithm design.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We motivate amortized analysis with the dynamic array, where occasional costly resizes are amortized over many cheap insertions. The aggregate method gives us our first approach: simply divide total cost by number of operations.</p></div></div>
+
 <p>Worst-case analysis sometimes paints a misleadingly pessimistic picture. Consider a <strong>dynamic array</strong> (like Python's <code>list</code> or C++'s <code>vector</code>): most <code>append</code> operations take \\(O(1)\\), but occasionally the array must be resized, costing \\(O(n)\\). If we charge \\(O(n)\\) to every operation, we dramatically overestimate the total cost.</p>
 
 <p><strong>Amortized analysis</strong> provides a tighter bound by averaging over a <em>sequence</em> of operations, without assuming anything about the input distribution.</p>
@@ -203,6 +206,8 @@ $$\\hat{c} = \\frac{\\sum_{i=1}^{n} c_i}{n}.$$
             id: 'ch03-sec02',
             title: 'Accounting Method',
             content: `<h2>Accounting Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The aggregate method works but can be hard to apply to complex data structures. The accounting method provides a more flexible approach: assign "credits" to cheap operations that can be "spent" on expensive ones later.</p></div></div>
+
 <p>The accounting method assigns <em>credits</em> to individual operations. Some operations are overcharged (they "save" credits), and the excess credits pay for later expensive operations.</p>
 
 <div class="env-block definition">
@@ -412,6 +417,8 @@ $$\\sum_{i=1}^{n} \\hat{c}_i \\ge \\sum_{i=1}^{n} c_i \\quad \\text{for all } n.
             id: 'ch03-sec03',
             title: 'Potential Method',
             content: `<h2>Potential Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The potential method is the most powerful and general amortized analysis technique. It defines a potential function over the data structure state, converting the analysis into a telescoping sum. This method will be essential for analyzing Fibonacci heaps and splay trees later in the course.</p></div></div>
+
 <p>The potential method is the most powerful and general amortized analysis technique. It defines a <strong>potential function</strong> on the data structure state, analogous to potential energy in physics.</p>
 
 <div class="env-block definition">
@@ -611,6 +618,8 @@ $$\\sum_{i=1}^n \\hat{c}_i = \\sum_{i=1}^n c_i + \\Phi(D_n) - \\Phi(D_0) \\ge \\
             id: 'ch03-sec04',
             title: 'Case Study: Binary Counter',
             content: `<h2>Case Study: Binary Counter</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We now apply all three methods to a concrete case study: the binary counter. Incrementing a binary counter can flip many bits at once, yet the amortized cost per increment is only \(O(1)\). This example beautifully illustrates how all three methods yield the same answer.</p></div></div>
+
 <p>The binary counter is a classic example that beautifully illustrates all three amortized analysis methods.</p>
 
 <div class="env-block definition">
@@ -858,6 +867,8 @@ INCREMENT(A, k)
             id: 'ch03-sec05',
             title: 'Case Study: Dynamic Table Expansion & Contraction',
             content: `<h2>Case Study: Dynamic Table Expansion & Contraction</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Our second case study, the dynamic table with both expansion and contraction, shows why naive strategies can cause "thrashing" and how careful design avoids it. This is a pattern that appears throughout systems programming and database design.</p></div></div>
+
 <p>The dynamic array example becomes much more subtle when we also allow <strong>deletions</strong> that can trigger <strong>shrinking</strong>. Naive strategies can lead to <em>thrashing</em> &mdash; repeatedly expanding and shrinking.</p>
 
 <div class="env-block definition">
@@ -907,7 +918,8 @@ $$\\Phi(D) = \\begin{cases} 2 \\cdot \\text{size} - \\text{capacity} & \\text{if
 <p>The key insight: the "gap" between the expand trigger (\\(\\alpha = 1\\)) and the shrink trigger (\\(\\alpha = 1/4\\)) ensures that many cheap operations (each paying a bit of potential) happen between consecutive expensive resizes. This "buffer zone" is what makes the amortized bound work.</p>
 <p>This pattern appears throughout algorithm design: <strong>hysteresis</strong> (using different thresholds for opposite actions) prevents oscillation and enables efficient amortized bounds.</p>
 </div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>With our analysis toolkit complete (asymptotic notation, recurrences, and amortized analysis), we are ready to design algorithms. Chapter 4 launches into the first major algorithmic paradigm: divide-and-conquer, beginning with the elegant Merge Sort.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch03-viz-thrashing',

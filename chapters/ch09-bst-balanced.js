@@ -15,6 +15,9 @@ window.CHAPTERS.push({
             id: 'ch09-sec01',
             title: 'BST Operations',
             content: `<h2>Binary Search Tree Operations</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Heaps (Chapter 8) efficiently support priority queue operations, but they cannot search for arbitrary keys or enumerate elements in sorted order. Binary search trees (BSTs) fill this gap by organizing data so that every node's left subtree contains smaller keys and right subtree contains larger keys. The challenge is keeping the tree balanced so that operations remain \(O(\log n)\). This chapter develops BSTs, Red-Black trees, AVL trees, and order-statistic trees.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We start with the basic BST operations: search, insert, delete, min, and max. All run in \(O(h)\) time where \(h\) is the tree height, which motivates the quest for balanced trees in later sections.</p></div></div>
+
 <p>A <strong>binary search tree (BST)</strong> is a rooted binary tree where each node \\(x\\) satisfies: all keys in the left subtree \\(\\le x.\\text{key}\\), and all keys in the right subtree \\(\\ge x.\\text{key}\\).</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Binary Search Tree)</div><div class="env-body">
@@ -246,6 +249,8 @@ window.CHAPTERS.push({
             id: 'ch09-sec02',
             title: 'Traversals & Successor/Predecessor',
             content: `<h2>Traversals & Successor/Predecessor</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>BSTs naturally support in-order traversal, which visits keys in sorted order. This section also develops the successor and predecessor operations, which are essential building blocks for range queries and iterators.</p></div></div>
+
 
 <h3>Tree Traversals</h3>
 <p>Three standard traversals of a BST, each running in \\(\\Theta(n)\\) time:</p>
@@ -444,6 +449,8 @@ window.CHAPTERS.push({
             id: 'ch09-sec03',
             title: 'Red-Black Trees',
             content: `<h2>Red-Black Trees</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>An unbalanced BST can degenerate to a linked list with \(O(n)\) height. Red-Black trees prevent this by coloring nodes red or black and enforcing structural invariants that guarantee \(h = O(\log n)\). The rebalancing uses rotations, a fundamental operation that preserves the BST property.</p></div></div>
+
 <p>A <strong>red-black tree</strong> is a BST with an extra bit per node (color: red or black) and balancing rules that guarantee \\(h = O(\\log n)\\).</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Red-Black Tree Properties)</div><div class="env-body">
@@ -703,6 +710,8 @@ window.CHAPTERS.push({
             id: 'ch09-sec04',
             title: 'AVL Trees',
             content: `<h2>AVL Trees</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>AVL trees offer an alternative balancing strategy: maintain the invariant that every node's children differ in height by at most 1. This gives a tighter height bound (\(1.44 \log n\)) than Red-Black trees, at the cost of more frequent rotations on insertion and deletion.</p></div></div>
+
 <p>AVL trees (Adelson-Velsky and Landis, 1962) were the first self-balancing BSTs. They maintain a stricter balance than red-black trees.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (AVL Property)</div><div class="env-body">
@@ -903,6 +912,8 @@ $$|h(x.\\text{left}) - h(x.\\text{right})| \\le 1$$
             id: 'ch09-sec05',
             title: 'Order-Statistic Trees',
             content: `<h2>Order-Statistic Trees</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Can we find the \(k\)-th smallest element in a dynamic set efficiently? Order-statistic trees augment Red-Black trees with subtree sizes, supporting Select (find rank \(k\)) and Rank (find rank of key \(x\)) in \(O(\log n)\) time. This augmentation technique generalizes to many other problems.</p></div></div>
+
 <p>An <strong>order-statistic tree</strong> augments a balanced BST (e.g., red-black tree) so that we can efficiently find the \\(i\\)-th smallest element and determine the rank of any element.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Augmented Size Field)</div><div class="env-body">
@@ -937,7 +948,8 @@ $$|h(x.\\text{left}) - h(x.\\text{right})| \\le 1$$
 
 <div class="env-block example"><div class="env-title">Example</div><div class="env-body">
 <p>Other augmentations: interval trees (store max endpoint in subtree), segment trees, etc. The augmentation theorem applies whenever the field depends only on the node and its immediate children's fields.</p>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>BSTs give \(O(\log n)\) search, but hash tables can achieve \(O(1)\) expected time for lookups. Chapter 10 explores hash tables, skip lists, and Bloom filters, completing our toolkit of fundamental dictionary data structures.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch09-viz-os-tree',

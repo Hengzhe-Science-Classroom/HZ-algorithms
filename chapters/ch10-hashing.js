@@ -15,6 +15,9 @@ window.CHAPTERS.push({
             id: 'ch10-sec01',
             title: 'Hash Functions',
             content: `<h2>Hash Functions</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>BSTs and balanced trees (Chapter 9) provide \(O(\log n)\) search, insert, and delete. But when we do not need ordering and just want fast lookups, hash tables deliver \(O(1)\) expected time. This chapter covers hash function design, collision resolution strategies, advanced hashing schemes, and two elegant probabilistic data structures: skip lists and Bloom filters.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>A hash table's quality depends on its hash function. This section covers the division method, multiplication method, and universal hashing, showing how to map keys to table indices while minimizing collisions.</p></div></div>
+
 <p>A <strong>hash table</strong> maps keys from a large universe \\(U\\) to a table of size \\(m\\) via a hash function \\(h: U \\to \\{0, 1, \\ldots, m-1\\}\\). The goal is \\(O(1)\\) expected-time operations.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Hash Function)</div><div class="env-body">
@@ -152,6 +155,8 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             id: 'ch10-sec02',
             title: 'Collision Resolution',
             content: `<h2>Collision Resolution</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Even with a good hash function, collisions are inevitable. We study two families of collision resolution: chaining (linked lists at each slot) and open addressing (probing within the table). Each has distinct performance tradeoffs.</p></div></div>
+
 
 <h3>Chaining</h3>
 <p>Each slot contains a linked list of all keys that hash to it. Simple and effective when the load factor \\(\\alpha = n/m\\) is moderate.</p>
@@ -380,6 +385,8 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             id: 'ch10-sec03',
             title: 'Perfect & Cuckoo Hashing',
             content: `<h2>Perfect Hashing & Cuckoo Hashing</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Can we guarantee \(O(1)\) worst-case lookup? Perfect hashing achieves this for static sets using a two-level scheme. Cuckoo hashing extends this idea to dynamic sets, using two hash functions and a "kick-out" strategy.</p></div></div>
+
 
 <h3>Perfect Hashing</h3>
 <p>When the key set is static (known in advance), we can achieve \\(O(1)\\) worst-case lookup using <em>perfect hashing</em>.</p>
@@ -578,6 +585,8 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             id: 'ch10-sec04',
             title: 'Skip Lists',
             content: `<h2>Skip Lists</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Skip lists are a randomized alternative to balanced BSTs that achieve \(O(\log n)\) expected time for search, insert, and delete. Their simplicity makes them a popular choice in practice (e.g., Redis, LevelDB).</p></div></div>
+
 <p>A <strong>skip list</strong> (Pugh, 1990) is a randomized data structure that provides \\(O(\\log n)\\) expected-time search, insert, and delete — comparable to balanced BSTs but simpler to implement.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Skip List)</div><div class="env-body">
@@ -810,6 +819,8 @@ $$\\Pr_{h \\in \\mathcal{H}}[h(k_1) = h(k_2)] \\le \\frac{1}{m}$$
             id: 'ch10-sec05',
             title: 'Bloom Filters',
             content: `<h2>Bloom Filters</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Sometimes we do not need exact membership queries, just a fast "probably in the set" test. Bloom filters use multiple hash functions and a bit array to answer membership queries with no false negatives and a controllable false positive rate, using very little memory.</p></div></div>
+
 <p>A <strong>Bloom filter</strong> (Bloom, 1970) is a space-efficient probabilistic data structure for set membership queries. It may yield false positives but never false negatives.</p>
 
 <div class="env-block definition"><div class="env-title">Definition (Bloom Filter)</div><div class="env-body">
@@ -846,7 +857,8 @@ $$f_{\\min} = (1/2)^k = (0.6185\\ldots)^{m/n}$$
 <div class="env-block example"><div class="env-title">Example</div><div class="env-body">
 <p>With \\(n = 1000\\) elements and target \\(f = 1\\%\\): \\(m = 1.44 \\times 1000 \\times \\log_2(100) \\approx 9585\\) bits (about 1.2 KB). With \\(k = 7\\) hash functions.</p>
 <p>Compare with storing 1000 elements explicitly: at least 1000 pointers/entries, typically many KB.</p>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Our data structure toolkit is nearly complete. Chapter 11 introduces Union-Find (disjoint sets), a specialized structure for tracking connected components that will be essential for graph algorithms like Kruskal's MST (Chapter 15).</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch10-viz-bloom',

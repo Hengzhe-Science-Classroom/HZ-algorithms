@@ -16,6 +16,9 @@ window.CHAPTERS.push({
             id: 'ch02-sec01',
             title: 'Divide-and-Conquer Recurrences',
             content: `<h2>Divide-and-Conquer Recurrences</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapter 1 gave us the language of asymptotic analysis; now we need techniques for <em>solving</em> the recurrences that arise from recursive algorithms. When Merge Sort splits and recombines, its running time satisfies \(T(n) = 2T(n/2) + \Theta(n)\). How do we extract the closed form \(\Theta(n \log n)\)? This chapter provides four systematic methods for solving such recurrences.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin by understanding where recurrences come from: every divide-and-conquer algorithm naturally generates a recurrence that relates the cost on input size \(n\) to the cost on smaller subproblems. This section sets up the framework.</p></div></div>
+
 <p>Recursive algorithms naturally give rise to <strong>recurrence relations</strong> that describe their running time. Understanding how to solve these recurrences is a core skill in algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -160,6 +163,8 @@ $$T(n) = \\begin{cases} \\Theta(1) & \\text{if } n \\le n_0 \\\\ a \\, T(n/b) + 
             id: 'ch02-sec02',
             title: 'Substitution Method',
             content: `<h2>Substitution Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The substitution method is the most flexible technique: guess a bound, then prove it correct by induction. It works for any recurrence, but requires an initial guess. This section shows how to make and verify those guesses systematically.</p></div></div>
+
 <p>The substitution method is the most general technique: <strong>guess</strong> the solution and then <strong>prove</strong> it correct by mathematical induction.</p>
 
 <div class="env-block definition">
@@ -289,6 +294,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
             id: 'ch02-sec03',
             title: 'Recursion-Tree Method',
             content: `<h2>Recursion-Tree Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Where does the initial guess come from? The recursion-tree method provides visual intuition by unfolding the recurrence into a tree and summing the costs level by level. This often suggests the correct asymptotic bound, which can then be confirmed via substitution.</p></div></div>
+
 <p>The recursion-tree method provides a visual way to solve recurrences by drawing out the tree of recursive calls and summing the work at each level.</p>
 
 <div class="env-block definition">
@@ -521,6 +528,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
             id: 'ch02-sec04',
             title: 'The Master Theorem',
             content: `<h2>The Master Theorem</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>For the most common class of divide-and-conquer recurrences, the Master Theorem provides an instant answer by comparing the work done at each level. This is the tool you will reach for most often in practice.</p></div></div>
+
 <p>The Master Theorem provides a direct formula for recurrences of the form \\(T(n) = aT(n/b) + f(n)\\), where \\(a \\ge 1\\) and \\(b > 1\\).</p>
 
 <div class="env-block theorem">
@@ -710,6 +719,8 @@ $$T(n) = 2T(n/2) + n \\le 2c(n/2)\\log(n/2) + n = cn(\\log n - 1) + n = cn\\log 
             id: 'ch02-sec05',
             title: 'Akra-Bazzi Method',
             content: `<h2>Akra-Bazzi Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Master Theorem has gaps: it does not cover all recurrences. The Akra-Bazzi method fills those gaps, handling unequal subproblem sizes and more general cost functions. It is the most powerful general-purpose tool for divide-and-conquer recurrences.</p></div></div>
+
 <p>The Akra-Bazzi method generalizes the Master Theorem to handle unequal subproblem sizes and covers the "gaps" between the Master Theorem's three cases.</p>
 
 <div class="env-block theorem">
@@ -757,7 +768,8 @@ $$T(n) = \\Theta\\!\\left(n^p \\left(1 + \\int_1^n \\frac{g(u)}{u^{p+1}} \\, du\
 <div class="env-body">
 <p>The Akra-Bazzi method requires \\(g(n)\\) to have a polynomial growth bound on its derivative. Pathological functions like \\(g(n) = n^{2+\\sin n}\\) are excluded.</p>
 </div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>We now have a complete toolkit for analyzing recursive algorithms. But not all algorithms are recursive, and some operations have costs that vary dramatically from step to step. Chapter 3 introduces amortized analysis, which handles sequences of operations whose individual costs fluctuate but whose total cost is well-behaved.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch02-viz-akra-bazzi',

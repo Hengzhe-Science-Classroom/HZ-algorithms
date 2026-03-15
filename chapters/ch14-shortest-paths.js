@@ -14,6 +14,9 @@ window.CHAPTERS.push({
         title: '1. Relaxation Framework',
         content: `
 <h2>The Relaxation Framework</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Graph traversal (Chapter 12) finds reachable vertices; topological sort (Chapter 13) orders them. Now we add edge weights and ask: what is the cheapest way to get from one vertex to another? The shortest path problem is one of the most fundamental and widely applied problems in all of computer science, powering GPS navigation, network routing, and countless optimization tasks. This chapter develops four classic algorithms, each suited to different graph structures.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>All shortest path algorithms share a common operation: edge relaxation. If we discover a shorter path to a vertex through an edge, we update our estimate. This section formalizes the relaxation framework and proves its key properties, which underpin every algorithm in the chapter.</p></div></div>
+
 
 <p>
 All single-source shortest path algorithms share a common subroutine: <strong>edge relaxation</strong>.
@@ -201,6 +204,8 @@ reachable from the cycle. Dijkstra's algorithm assumes non-negative weights; Bel
         title: '2. Dijkstra\'s Algorithm',
         content: `
 <h2>Dijkstra's Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Dijkstra's algorithm solves single-source shortest paths in graphs with non-negative edge weights. It greedily processes the closest unvisited vertex, using a priority queue (from Chapter 8). With a Fibonacci heap, it achieves \(O(V \log V + E)\) time.</p></div></div>
+
 
 <p>
 Dijkstra's algorithm (1959) solves the single-source shortest path problem for graphs with
@@ -433,6 +438,8 @@ might later be improved through a negative edge, violating the greedy invariant.
         title: '3. Bellman-Ford Algorithm',
         content: `
 <h2>Bellman-Ford Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>What if some edge weights are negative? Dijkstra's greedy strategy fails, but the Bellman-Ford algorithm handles negative weights by relaxing all edges \(V - 1\) times. It also detects negative-weight cycles, which make shortest paths undefined.</p></div></div>
+
 
 <p>
 The Bellman-Ford algorithm handles graphs with <strong>negative edge weights</strong> and can
@@ -710,6 +717,8 @@ there exists a path with \\(n\\) edges that is shorter, which implies a negative
         title: '4. Shortest Paths in DAGs',
         content: `
 <h2>Shortest Paths in DAGs</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>In DAGs, shortest paths can be computed in \(O(V + E)\) time by processing vertices in topological order (from Chapter 13). No priority queue is needed, making this the fastest single-source shortest path algorithm for acyclic graphs.</p></div></div>
+
 
 <p>
 For <strong>directed acyclic graphs</strong>, we can solve single-source shortest paths
@@ -891,6 +900,8 @@ minimum project completion time.
         title: '5. All-Pairs Shortest Paths',
         content: `
 <h2>All-Pairs Shortest Paths</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Sometimes we need shortest paths between all pairs of vertices. Floyd-Warshall solves this in \(O(V^3)\) using dynamic programming, while Johnson's algorithm combines Bellman-Ford and Dijkstra to handle sparse graphs more efficiently.</p></div></div>
+
 
 <p>
 The all-pairs shortest paths (APSP) problem asks for \\(\\delta(u, v)\\) for every pair \\((u, v)\\).
@@ -987,7 +998,8 @@ Johnson's: \\(O(nm + n^2 \\log n)\\), better for sparse graphs (\\(m = O(n)\\) g
 <div class="viz-placeholder" data-viz="ch14-viz-floyd"></div>
 
 <div class="viz-placeholder" data-viz="ch14-viz-johnson"></div>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Shortest paths find the cheapest route; minimum spanning trees find the cheapest way to connect all vertices. Chapter 15 develops MST algorithms (Kruskal, Prim, Boruvka), which use the priority queues from Chapter 8 and the Union-Find from Chapter 11.</p></div></div>`,
         visualizations: [
         {
             id: 'ch14-viz-floyd',

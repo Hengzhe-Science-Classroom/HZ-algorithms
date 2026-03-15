@@ -12,6 +12,9 @@ window.CHAPTERS.push({
  id: 'ch17-sec01',
  title: 'Core Ideas of DP',
  content: `<h2>1. Core Ideas of DP</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Greedy algorithms (Chapter 16) make irrevocable choices and sometimes miss the optimum. Dynamic programming (DP) takes the opposite approach: systematically explore all choices by breaking the problem into overlapping subproblems and storing their solutions. Where divide-and-conquer (Chapter 4) solves independent subproblems, DP exploits the fact that the same subproblems recur. This chapter develops DP through a progression of classic problems, from Fibonacci numbers to the Travelling Salesman.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the core ideas: optimal substructure, overlapping subproblems, and the choice between top-down memoization and bottom-up tabulation. The Fibonacci sequence illustrates how DP transforms an exponential recursive algorithm into a linear one.</p></div></div>
+
 <p>Dynamic Programming (dynamic programming, DP) is through<strong>solution subproblem</strong>, <strong>result</strong>compute algorithm. it use have two key problem:</p>
 
 <div class="env-block definition">
@@ -177,6 +180,8 @@ DP (bottom-up): use array \\(F[0], F[1], \\ldots, F[n]\\), \\(O(n)\\). this is D
  id: 'ch17-sec02',
  title: 'Classic DP Problems: Rod Cutting & LCS',
  content: `<h2>2 DP problem: and LCS</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The rod cutting problem and the Longest Common Subsequence (LCS) are two classic DP problems. Rod cutting shows how to optimize over all possible cuts; LCS shows how to align two sequences. Both build DP tables that reveal the structure of optimal solutions.</p></div></div>
+
 
 <h3>2.1 (Rod Cutting)</h3>
 <p>given \\(n\\) \\(p[1.n]\\), its \\(p[i]\\) is length \\(i\\). cut revenue maximum. </p>
@@ -409,6 +414,8 @@ DP (bottom-up): use array \\(F[0], F[1], \\ldots, F[n]\\), \\(O(n)\\). this is D
  id: 'ch17-sec03',
  title: 'Edit Distance & Matrix Chain',
  content: `<h2>3 Edit Distance and Matrix Chain</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Edit distance (the minimum number of insertions, deletions, and substitutions to transform one string into another) extends LCS to a richer operation set. Matrix chain multiplication shows how DP optimizes the order of associative operations, a technique used in database query planning.</p></div></div>
+
 
 <h3>3.1 Edit Distance (Edit Distance)</h3>
 <p>Edit Distance (Levenshtein distance) (insert, delete, replace). </p>
@@ -687,6 +694,8 @@ DP (bottom-up): use array \\(F[0], F[1], \\ldots, F[n]\\), \\(O(n)\\). this is D
  id: 'ch17-sec04',
  title: 'Many Forms of DP',
  content: `<h2>4 DP </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>DP takes many forms: 0-1 knapsack fills a weight/value table; shortest paths on grids use positional state; interval DP optimizes over subranges. This section surveys these variants, showing that the underlying principle (store and reuse subproblem solutions) is always the same.</p></div></div>
+
 <p>DP not array or. different problem different DP: column DP, DP, DP, tree DP. </p>
 
 <h3>4.1 0-1 knapsack (Knapsack)</h3>
@@ -946,6 +955,8 @@ DP (bottom-up): use array \\(F[0], F[1], \\ldots, F[n]\\), \\(O(n)\\). this is D
  id: 'ch17-sec05',
  title: 'Space Optimization & Bitmask DP',
  content: `<h2>5 and state DP</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Advanced DP techniques include space optimization (reducing from \(O(n^2)\) to \(O(n)\) by keeping only two rows) and bitmask DP, where the state is a subset of elements. The bitmask DP solution to the Travelling Salesman Problem runs in \(O(2^n n^2)\), much better than the \(O(n!)\) brute force.</p></div></div>
+
 <p>in use, DP is. need: array () DP (state). </p>
 
 <h3>5.1 array (Rolling Array)</h3>
@@ -988,7 +999,8 @@ $$dp[S][i] = \\min_{j \\in S \\setminus \\{i\\}} \\{dp[S \\setminus \\{i\\}][j] 
 <div class="env-block remark">
 <div class="env-title">Remark</div>
 <div class="env-body"><p>DP in <strong>subproblem define</strong>. find state denote is, not is. state space: prefix/ (column DP), (DP), subtree (tree DP), subset (DP), (DP). </p></div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>DP explores all choices implicitly through its table structure. But what about problems where we need to explore a solution space explicitly? Chapter 18 introduces backtracking and branch-and-bound, which search through combinatorial spaces with intelligent pruning.</p></div></div>`,
  visualizations: [
  {
  id: 'ch17-viz-bitmask-tsp',

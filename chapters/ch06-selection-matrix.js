@@ -10,6 +10,9 @@ window.CHAPTERS.push({
  id: 'ch06-sec01',
  title: 'Randomized Selection Algorithm',
  content: `<h2>Randomized Selection algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapter 5's Quicksort partitions an array to sort it. But what if we only need to find the \(k\)-th smallest element? The selection problem needs less work than sorting, and divide-and-conquer provides linear-time solutions. This chapter also showcases two more triumphs of divide-and-conquer beyond sorting: Strassen's matrix multiplication and the Fast Fourier Transform.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with QuickSelect, the randomized sibling of Quicksort. By recursing on only one side of the partition, QuickSelect finds the \(k\)-th smallest element in expected \(O(n)\) time. The analysis mirrors Quicksort's, but with a key twist.</p></div></div>
+
 <p><strong>selection problem(Selection Problem)</strong>: given array \\(A[1.n]\\) \\(k\\)(\\(1 \\leq k \\leq n\\)), \\(k\\) element. </p>
 
 <div class="env-block definition"><div class="env-title">Definition (Order Statistics)</div><div class="env-body">
@@ -197,6 +200,8 @@ $$E[T(n)] \\leq \\frac{1}{n} \\sum_{q=1}^{n} T(\\max(q-1, n-q)) + O(n) \\leq \\f
  id: 'ch06-sec02',
  title: 'Median of Medians Algorithm',
  content: `<h2>Median of Medians algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Can we guarantee \(O(n)\) worst-case selection without randomization? The Median of Medians algorithm achieves this through a clever pivot selection strategy that guarantees a good enough partition at every step.</p></div></div>
+
 <p>Randomized Selection algorithm expected time \\(O(n)\\), worst-case is \\(O(n^2)\\). <strong>Median of Medians</strong>(Median of Medians, MoM)algorithm guarantee \\(O(n)\\) worst-case. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Median of Medians / BFPRT)</div><div class="env-body">
@@ -363,6 +368,8 @@ $$E[T(n)] \\leq \\frac{1}{n} \\sum_{q=1}^{n} T(\\max(q-1, n-q)) + O(n) \\leq \\f
  id: 'ch06-sec03',
  title: 'Strassen Matrix Multiplication',
  content: `<h2>Strassen Matrix Multiplication</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Divide-and-conquer is not limited to one-dimensional problems. Strassen's algorithm multiplies \(n \times n\) matrices in \(O(n^{2.807})\) time, beating the naive \(O(n^3)\) by reducing 8 recursive multiplications to 7. The saving comes from clever algebraic identities.</p></div></div>
+
 <p>two \\(n \\times n\\) need \\(O(n^3)\\). <strong>Strassen algorithm</strong>(1969)through decrease recursive times, \\(O(n^{\\log_2 7}) \\approx O(n^{2.807})\\). </p>
 
 <h3>Matrix Multiplication</h3>
@@ -531,6 +538,8 @@ $$\\begin{pmatrix} A_{11} & A_{12} \\\\ A_{21} & A_{22} \\end{pmatrix} \\cdot \\
  id: 'ch06-sec04',
  title: 'Fast Fourier Transform',
  content: `<h2>Fast Fourier Transform (FFT)</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Fast Fourier Transform (FFT) is arguably the most important algorithm of the 20th century. It evaluates a polynomial at \(n\) special points in \(O(n \log n)\) time by exploiting the symmetry of complex roots of unity, a divide-and-conquer masterpiece.</p></div></div>
+
 <p><strong>Fast Fourier Transform</strong>(Fast Fourier Transform, FFT)is divide and conquer use. it (DFT)compute from \\(O(n^2)\\) to \\(O(n \\log n)\\). </p>
 
 <div class="env-block definition"><div class="env-title">Definition (DFT)</div><div class="env-body">
@@ -721,6 +730,8 @@ $$\\hat{a}_k = \\sum_{j=0}^{n-1} a_j \\omega_n^{jk}, \\quad k = 0, 1, \\ldots, n
  id: 'ch06-sec05',
  title: 'Polynomial Multiplication',
  content: `<h2>term </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We close by showing how FFT enables \(O(n \log n)\) polynomial multiplication. The strategy, evaluate, pointwise multiply, interpolate, is a template that appears throughout scientific computing and signal processing.</p></div></div>
+
 <p>FFT need use is<strong>term </strong>, two \\(n\\) times term from \\(O(n^2)\\) to \\(O(n \\log n)\\). </p>
 
 <div class="env-block definition"><div class="env-title">Definition (Polynomial Multiplication)</div><div class="env-body">
@@ -751,7 +762,8 @@ $$C(x) = A(x) \\cdot B(x) = \\sum_{k=0}^{2n-2} c_k x^k, \\quad c_k = \\sum_{i+j=
 <div class="env-block intuition"><div class="env-title">Intuition</div><div class="env-body">
 <p>term have denote: <strong>denote</strong><strong>value denote</strong>. in denote, need \\(O(n^2)\\). in value denote, only \\(O(n)\\)(). FFT in denote: </p>
 <p> \\(\\xrightarrow{\\text{FFT} O(n\\log n)}\\) value \\(\\xrightarrow{\\text{} O(n)}\\) value \\(\\xrightarrow{\\text{IFFT} O(n\\log n)}\\) </p>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Chapters 4 through 6 developed divide-and-conquer algorithms that sort, select, and multiply. But is \(O(n \log n)\) the best we can do for sorting? Chapter 7 proves that comparison-based sorting cannot beat \(\Omega(n \log n)\), then shows how to break that barrier by exploiting structure in the input.</p></div></div>`,
  visualizations: [
  {
  id: 'ch06-viz-poly-mult',

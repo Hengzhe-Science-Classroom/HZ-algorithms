@@ -14,6 +14,9 @@ window.CHAPTERS.push({
             title: 'Approximation Algorithms & Ratios',
             content: `
 <h2>Approximation Algorithms & Approximation Ratio</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapter 20 showed that many important problems are NP-complete, meaning exact polynomial-time solutions are unlikely. But we cannot simply give up. This final chapter presents two powerful strategies for coping with NP-hardness: approximation algorithms, which trade exactness for efficiency by providing provable guarantees on solution quality; and randomized algorithms, which use random choices to achieve good expected performance. Together, they represent the frontier of practical algorithm design.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We formalize what it means to approximate an optimization problem. The approximation ratio \(\rho(n)\) measures how far an algorithm's solution can be from optimal. This section establishes the framework and surveys the landscape of achievable ratios for different problems.</p></div></div>
+
 
 <p>When facing NP-hard optimization problems, we often cannot find exact solutions in polynomial time. <strong>Approximation algorithms</strong> trade optimality for efficiency, providing solutions with <em>provable guarantees</em> on how far they are from optimal.</p>
 
@@ -148,6 +151,8 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             title: 'Vertex Cover: 2-Approximation',
             content: `
 <h2>2-Approximation for Vertex Cover</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Vertex Cover is our first case study: a simple greedy algorithm achieves a 2-approximation. We prove the approximation guarantee using a lower bound argument (the matching bound) and discuss the open question of whether the factor of 2 can be improved.</p></div></div>
+
 
 <p>The <strong>Minimum Vertex Cover</strong> problem asks for the smallest set of vertices that "covers" all edges. It is NP-hard, but has an elegant 2-approximation.</p>
 
@@ -331,6 +336,8 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             title: 'Set Cover Greedy Approximation',
             content: `
 <h2>Greedy Approximation for Set Cover</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Set Cover problem generalizes Vertex Cover and has an \(O(\ln n)\)-approximation via the greedy algorithm. We prove this bound and show that it is essentially tight: no polynomial-time algorithm can achieve a \((1 - \epsilon) \ln n\) ratio unless P = NP.</p></div></div>
+
 
 <div class="env-block definition">
 <div class="env-title">Definition 21.3 (Minimum Set Cover)</div>
@@ -497,6 +504,8 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             title: 'TSP with Triangle Inequality',
             content: `
 <h2>TSP Approximation with Triangle Inequality</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>For TSP with the triangle inequality, the MST-based heuristic gives a 2-approximation, and Christofides' algorithm improves this to 3/2. These results beautifully connect back to MSTs (Chapter 15) and Eulerian circuits, showing how structural graph properties enable better approximations.</p></div></div>
+
 
 <p>The <strong>Traveling Salesman Problem (TSP)</strong> asks for the shortest tour visiting all cities. While general TSP has no constant-factor approximation, the <em>metric</em> version (distances satisfy the triangle inequality) admits good approximations.</p>
 
@@ -723,6 +732,8 @@ $$\\max\\left(\\frac{C}{C^*},\\, \\frac{C^*}{C}\\right) \\leq \\rho(n),$$
             title: 'Randomized Algorithms',
             content: `
 <h2>Randomized Algorithms</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Randomized algorithms use coin flips as a computational resource. Karger's contraction algorithm finds minimum cuts with high probability by random edge contractions. Randomized rounding of linear programming relaxations provides a principled approach to MAX-SAT and other optimization problems.</p></div></div>
+
 
 <p>Randomized algorithms use random choices to achieve good expected performance or high-probability guarantees. They are often simpler and faster than deterministic alternatives.</p>
 
@@ -798,7 +809,8 @@ $$\\prod_{i=0}^{n-3} \\left(1 - \\frac{k}{k(n-i)/2}\\right) = \\prod_{i=0}^{n-3}
 <p>The interplay between randomization and approximation is deep. <strong>Semidefinite programming</strong> (SDP) relaxation with randomized rounding achieves the best known ratios for many problems, including MAX-CUT (Goemans-Williamson 0.878-approximation).</p>
 </div>
 </div>
-`,
+
+<div class="env-block bridge"><div class="env-title">Course Conclusion</div><div class="env-body"><p>This course has taken you from the definition of an algorithm (Chapter 0) through analysis tools (Chapters 1-3), sorting and selection (Chapters 4-7), data structures (Chapters 8-11), graph algorithms (Chapters 12-15), algorithm design paradigms (Chapters 16-19), and finally complexity theory and coping strategies (Chapters 20-21). The toolkit you have built, asymptotic analysis, divide-and-conquer, dynamic programming, greedy algorithms, graph algorithms, NP-completeness, approximation, and randomization, will serve you across every area of computer science and beyond.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch21-viz-karger',

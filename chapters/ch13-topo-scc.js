@@ -14,6 +14,9 @@ window.CHAPTERS.push({
         title: '1. DAGs and Properties',
         content: `
 <h2>Directed Acyclic Graphs</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapter 12 introduced BFS and DFS as exploration tools. Now we harness DFS to solve two fundamental structural problems: topological sorting of directed acyclic graphs (DAGs) and finding strongly connected components (SCCs) of general directed graphs. Topological sort orders tasks so that dependencies are respected; SCC decomposition reveals the coarse structure of a directed graph. Both rely on the discovery/finish time structure of DFS.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin by formally defining DAGs and establishing their key properties. A directed graph is a DAG if and only if it has no back edges (from Chapter 12's edge classification), and every DAG admits a topological ordering.</p></div></div>
+
 
 <p>
 A <strong>directed acyclic graph (DAG)</strong> is a directed graph with no cycles.
@@ -190,6 +193,8 @@ forming a cycle. Contradiction with DAG. Hence some vertex has in-degree 0.
         title: '2. Topological Sort via DFS',
         content: `
 <h2>Topological Sort via DFS</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The DFS-based topological sort is elegant: run DFS on the entire graph and output vertices in reverse order of their finish times. We prove correctness using the parenthesis theorem and the property that finish times decrease along DAG edges.</p></div></div>
+
 
 <p>
 The simplest topological sort algorithm runs DFS and outputs vertices in
@@ -397,6 +402,8 @@ In all valid cases, \\(f[u] > f[v]\\). \\(\\square\\)
         title: '3. Kahn\'s Algorithm (BFS-Based Topological Sort)',
         content: `
 <h2>Kahn\'s Algorithm — BFS-Based Topological Sort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Kahn's algorithm provides a BFS-based alternative: repeatedly remove vertices with zero in-degree. It has the added benefit of detecting cycles (if not all vertices are removed, the graph has a cycle) and is often preferred in practice for dependency resolution.</p></div></div>
+
 
 <p>
 Kahn's algorithm (1962) takes a different approach: it repeatedly removes vertices
@@ -592,6 +599,8 @@ If a priority queue is used instead of a regular queue, Kahn's produces the
         title: '4. Kosaraju\'s Algorithm (SCC via Two-Pass DFS)',
         content: `
 <h2>Kosaraju\'s Algorithm — Strongly Connected Components</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>For general directed graphs (which may have cycles), strongly connected components (SCCs) partition the vertices into maximal sets of mutually reachable vertices. Kosaraju's algorithm finds all SCCs using two DFS passes: one on the original graph and one on the transpose.</p></div></div>
+
 
 <div class="env-block definition">
 <div class="env-title">Definition 13.3 (Strongly Connected)</div>
@@ -829,6 +838,8 @@ SCC becomes a sink, preventing escape to other components).
         title: '5. Tarjan\'s Algorithm (SCC via Single-Pass DFS)',
         content: `
 <h2>Tarjan\'s Algorithm — Single-Pass SCC Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Tarjan's algorithm finds SCCs in a single DFS pass using a stack and "low-link" values. It is more space-efficient than Kosaraju's and reveals how the SCC structure (the "meta-graph") is always a DAG, connecting back to topological sorting.</p></div></div>
+
 
 <p>
 Tarjan's algorithm (1972) finds all SCCs in a single DFS pass using a clever
@@ -899,7 +910,8 @@ Time: \\(O(n + m)\\). Space: \\(O(n)\\). Only a single DFS pass is needed (unlik
 <div class="viz-placeholder" data-viz="ch13-viz-tarjan"></div>
 
 <div class="viz-placeholder" data-viz="ch13-viz-metagraph"></div>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Graph traversal and structural decomposition are the foundation. Chapter 14 builds on them to solve one of the most practically important graph problems: finding shortest paths, using algorithms from Dijkstra to Floyd-Warshall.</p></div></div>`,
         visualizations: [
         {
             id: 'ch13-viz-tarjan',

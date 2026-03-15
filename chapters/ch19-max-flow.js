@@ -14,6 +14,9 @@ window.CHAPTERS.push({
             title: 'Flow Networks',
             content: `
 <h2>Flow Networks</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapters 16 through 18 explored design paradigms (greedy, DP, backtracking). Now we study a problem that connects combinatorial optimization to graph theory in a profound way: network flow. The max-flow min-cut theorem states that the maximum flow through a network equals the minimum capacity of edges that, if removed, disconnect source from sink. This duality has applications from bipartite matching to image segmentation.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the formal definition of flow networks: directed graphs with capacities, a source, and a sink. The key concepts of flow conservation, capacity constraints, and residual graphs provide the language for all flow algorithms.</p></div></div>
+
 
 <p>A <strong>flow network</strong> is a directed graph \\(G = (V, E)\\) equipped with a <strong>capacity function</strong> \\(c : E \\to \\mathbb{R}_{\\geq 0}\\), a distinguished <strong>source</strong> vertex \\(s\\), and a <strong>sink</strong> vertex \\(t\\).</p>
 
@@ -297,6 +300,8 @@ window.CHAPTERS.push({
             title: 'Ford-Fulkerson Method',
             content: `
 <h2>Ford-Fulkerson Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Ford-Fulkerson method repeatedly finds augmenting paths in the residual graph and pushes flow along them. While the method is simple and intuitive, its running time depends on how augmenting paths are chosen, motivating the improvements in the next section.</p></div></div>
+
 
 <p>The <strong>Ford-Fulkerson method</strong> is the foundational strategy for computing maximum flows: repeatedly find an augmenting path in the residual graph and push flow along it.</p>
 
@@ -517,6 +522,8 @@ window.CHAPTERS.push({
             title: 'Edmonds-Karp Algorithm',
             content: `
 <h2>Edmonds-Karp Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The Edmonds-Karp algorithm is Ford-Fulkerson with a twist: always choose the shortest augmenting path (via BFS). This simple rule guarantees \(O(VE^2)\) time, eliminating the pathological cases that can make generic Ford-Fulkerson slow.</p></div></div>
+
 
 <p>The <strong>Edmonds-Karp algorithm</strong> is Ford-Fulkerson with BFS for finding augmenting paths. This simple choice yields a polynomial-time guarantee independent of the flow value.</p>
 
@@ -796,6 +803,8 @@ window.CHAPTERS.push({
             title: 'Max-Flow Min-Cut Theorem',
             content: `
 <h2>Max-Flow Min-Cut Theorem</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The max-flow min-cut theorem is one of the deepest results in combinatorial optimization. We prove it using the augmenting paths framework and show how to extract a minimum cut from a maximum flow, connecting flow to graph connectivity.</p></div></div>
+
 
 <p>The <strong>max-flow min-cut theorem</strong> is one of the most beautiful and important results in combinatorial optimization. It establishes a duality between the maximum flow and the minimum cut.</p>
 
@@ -1081,6 +1090,8 @@ $$c(S, T) = \\sum_{u \\in S,\\, v \\in T,\\, (u,v) \\in E} c(u, v).$$
             title: 'Bipartite Matching & Applications',
             content: `
 <h2>Bipartite Matching & Applications</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Network flow is surprisingly versatile. We show how to reduce bipartite matching to max-flow, prove Hall's marriage theorem as a corollary, and sketch applications to edge-disjoint paths, project selection, and image segmentation.</p></div></div>
+
 
 <p>One of the most powerful applications of max-flow is solving <strong>bipartite matching</strong> problems by reduction to network flow.</p>
 
@@ -1146,7 +1157,8 @@ $$|N(S)| \\geq |S|,$$
   <li><strong>Image segmentation:</strong> Partition pixels into foreground/background by min-cut on a pixel-adjacency graph.</li>
   <li><strong>Baseball elimination:</strong> Determine if a team can still win the league.</li>
 </ul>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>All the algorithms we have studied so far run in polynomial time. But many natural problems appear to resist polynomial-time solutions. Chapter 20 formalizes this observation through the theory of NP-completeness, showing that thousands of important problems are, in a precise sense, equally hard.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch19-viz-bipartite',

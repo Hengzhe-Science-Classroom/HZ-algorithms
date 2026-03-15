@@ -16,6 +16,9 @@ window.CHAPTERS.push({
             id: 'ch01-sec01',
             title: 'O, \u03A9, \u0398 Notation',
             content: `<h2>\\(O\\), \\(\\Omega\\), \\(\\Theta\\) Notation</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>In Chapter 0, we computed exact operation counts for Insertion Sort, but those expressions were complicated and machine-dependent. Asymptotic notation gives us a cleaner, more powerful language for describing algorithm efficiency, focusing on growth rates rather than exact constants. This chapter develops the mathematical toolkit that we will use to classify every algorithm in this course.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the three foundational notations: \(O\) (upper bound), \(\Omega\) (lower bound), and \(\Theta\) (tight bound). These are the workhorses of algorithm analysis, appearing in virtually every complexity statement you will encounter.</p></div></div>
+
 <p>Asymptotic notation provides a mathematical language for describing the growth rate of functions, abstracting away constant factors and lower-order terms. It is the backbone of algorithm analysis.</p>
 
 <div class="env-block definition">
@@ -171,6 +174,8 @@ $$c_1 \\cdot g(n) \\le f(n) \\le c_2 \\cdot g(n) \\quad \\text{for all } n \\ge 
             id: 'ch01-sec02',
             title: 'o and \u03C9 Notation',
             content: `<h2>\\(o\\) and \\(\\omega\\) Notation</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Big-\(O\), \(\Omega\), and \(\Theta\) describe growth rates up to constant factors. Sometimes we need stricter comparisons. This section introduces \(o\) (strictly slower) and \(\omega\) (strictly faster), which are useful for proving separation results between complexity classes.</p></div></div>
+
 <p>The "big" notations describe asymptotic bounds that may or may not be tight. The "little" notations describe <em>strict</em> asymptotic relationships.</p>
 
 <div class="env-block definition">
@@ -309,6 +314,8 @@ $$0 \\le c \\cdot g(n) < f(n) \\quad \\text{for all } n \\ge n_0.$$
             id: 'ch01-sec03',
             title: 'Standard Growth Classes',
             content: `<h2>Standard Growth Classes</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>With the notation in place, we now catalog the standard growth classes, from constant to exponential, that serve as the benchmarks against which we measure every algorithm.</p></div></div>
+
 <p>In algorithm analysis, a small number of growth classes appear repeatedly. Understanding their relative order is essential.</p>
 
 <div class="env-block theorem">
@@ -515,6 +522,8 @@ $$1 \\prec \\log \\log n \\prec \\log n \\prec \\sqrt{n} \\prec n \\prec n \\log
             id: 'ch01-sec04',
             title: 'Limit Method',
             content: `<h2>Limit Method</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Applying the formal definition of asymptotic notation can be tedious. The limit method provides a powerful shortcut: compute \(\lim_{n\to\infty} f(n)/g(n)\) and read off the relationship directly.</p></div></div>
+
 <p>In many cases, the most elegant way to determine asymptotic relationships is through limits. This section develops the key limit-based techniques.</p>
 
 <div class="env-block theorem">
@@ -662,6 +671,8 @@ $$\\lim_{n \\to \\infty} \\frac{f(n)}{g(n)} = \\lim_{n \\to \\infty} \\frac{f'(n
             id: 'ch01-sec05',
             title: 'Analyzing Code Fragments',
             content: `<h2>Analyzing Code Fragments</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Theory meets practice in this section. We apply asymptotic analysis to real code fragments, learning to translate loops, conditionals, and nested structures into growth rate expressions. This skill is essential for every subsequent chapter.</p></div></div>
+
 <p>The ultimate purpose of asymptotic notation is to analyze the running time of algorithms. Let us develop systematic techniques for analyzing common code patterns.</p>
 
 <div class="env-block definition">
@@ -729,7 +740,8 @@ while i <= n
 </div>
 </div>
 
-<div class="viz-placeholder" data-viz="ch01-viz-crossover"></div>`,
+<div class="viz-placeholder" data-viz="ch01-viz-crossover"></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Asymptotic notation tells us <em>how</em> to describe growth rates; Chapter 2 tackles a crucial question: how do we solve the recurrences that arise from recursive algorithms? The Master Theorem and other techniques will let us analyze divide-and-conquer algorithms like Merge Sort in seconds rather than pages.</p></div></div>`,
             visualizations: [
                 {
                     id: 'ch01-viz-code-analyzer',

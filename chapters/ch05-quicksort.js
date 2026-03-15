@@ -10,6 +10,9 @@ window.CHAPTERS.push({
  id: 'ch05-sec01',
  title: 'The Quicksort Algorithm',
  content: `<h2>The Quicksort Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Merge Sort (Chapter 4) guarantees \(O(n \log n)\) worst-case time but requires \(O(n)\) extra space. Quicksort takes a different approach: partition the array in-place around a pivot, then recurse on each side. This makes Quicksort the fastest sorting algorithm in practice, despite a \(\Theta(n^2)\) worst case. The key to taming that worst case is <em>randomization</em>, our first encounter with a powerful algorithmic technique.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We begin with the core Quicksort algorithm: choose a pivot, partition the array so that all smaller elements precede the pivot and all larger elements follow it, then recurse. The partition step does all the work; the combine step is trivial (unlike Merge Sort).</p></div></div>
+
 <p>Quicksort(Quicksort) Tony Hoare 1960, is use use sorting algorithm. and Merge Sort different, Quicksort is<strong>in-place sort</strong>(in-place), not need auxiliary array. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Quicksort)</div><div class="env-body">
@@ -187,6 +190,8 @@ window.CHAPTERS.push({
  id: 'ch05-sec02',
  title: 'Lomuto & Hoare Partitioning',
  content: `<h2>Lomuto and Hoare </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The partition procedure is the engine of Quicksort. We study two variants: Lomuto's simpler scheme and Hoare's more efficient original. Understanding their differences reveals important lessons about constant factors and practical performance.</p></div></div>
+
 <p>algorithm have two: <strong>Lomuto </strong> <strong>Hoare </strong>. it can same(array pivot), different. </p>
 
 <h3>Lomuto </h3>
@@ -413,6 +418,8 @@ window.CHAPTERS.push({
  id: 'ch05-sec03',
  title: 'Worst-Case & Expected Analysis',
  content: `<h2>worst-case and expected </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Quicksort's performance depends entirely on pivot quality. When the pivot is always the smallest or largest element, we get \(\Theta(n^2)\). This section derives both the worst-case and expected-case bounds, showing that good pivots yield \(O(n \log n)\).</p></div></div>
+
 
 <h3>worst-case</h3>
 <div class="env-block theorem"><div class="env-title">Theorem (Quicksort Worst Case)</div><div class="env-body">
@@ -597,6 +604,8 @@ $$E[X] = \\sum_{i=1}^{n-1} \\sum_{j=i+1}^{n} \\frac{2}{j-i+1} = \\sum_{i=1}^{n-1
  id: 'ch05-sec04',
  title: 'Randomized Quicksort',
  content: `<h2>Randomized Quicksort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>How do we ensure good pivots? Randomized Quicksort selects the pivot uniformly at random, making the \(O(n \log n)\) expected time independent of the input. This is our first example of a randomized algorithm, a paradigm we will revisit in later chapters.</p></div></div>
+
 <p>determine Quicksort worst-case is \\(O(n^2)\\), and there exists input can this. <strong>randomization Quicksort</strong>through random select pivot this problem. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Randomized Quicksort)</div><div class="env-body">
@@ -762,6 +771,8 @@ $$E[X] = \\sum_{i=1}^{n-1} \\sum_{j=i+1}^{n} \\frac{2}{j-i+1} = \\sum_{i=1}^{n-1
  id: 'ch05-sec05',
  title: 'Practical Optimizations',
  content: `<h2>Practical Optimizations</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Real-world sorting libraries use Quicksort with practical optimizations: three-way partitioning for duplicate keys, median-of-three pivot selection, and switching to Insertion Sort for small subarrays. This section bridges theory and practice.</p></div></div>
+
 <p>Quicksort already, in also have its use sorting algorithm. </p>
 
 <h3>1. array to insert sorting</h3>
@@ -806,7 +817,8 @@ $$E[X] = \\sum_{i=1}^{n-1} \\sum_{j=i+1}^{n} \\frac{2}{j-i+1} = \\sum_{i=1}^{n-1
 <div class="viz-placeholder" data-viz="ch05-viz-optimizations"></div>
 
 <h3>4. Introsort</h3>
-<p>(C++ STL <code>std:sort</code>)usually use <strong>Introsort</strong>: when recursive depth \\(2 \\log_2 n\\) to heap sorting, guarantee \\(O(n \\log n)\\) worst-case. </p>`,
+<p>(C++ STL <code>std:sort</code>)usually use <strong>Introsort</strong>: when recursive depth \\(2 \\log_2 n\\) to heap sorting, guarantee \\(O(n \\log n)\\) worst-case. </p>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Quicksort partitions an array to sort it; the closely related selection problem asks for just the \(k\)-th smallest element. Chapter 6 shows how randomized partitioning solves selection in expected \(O(n)\) time, and then applies divide-and-conquer to matrix multiplication (Strassen) and polynomial multiplication (FFT).</p></div></div>`,
  visualizations: [
  {
  id: 'ch05-viz-three-way',

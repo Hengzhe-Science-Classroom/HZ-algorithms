@@ -12,6 +12,9 @@ window.CHAPTERS.push({
  id: 'ch16-sec01',
  title: 'Greedy Strategy Overview',
  content: `<h2>1. Greedy Strategy Overview</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>The graph algorithms of Chapters 12 through 15 used greedy choices implicitly (Dijkstra, Kruskal, Prim). Now we formalize the greedy paradigm: make the locally optimal choice at each step and hope it leads to a globally optimal solution. This chapter explores when greedy works (activity selection, Huffman coding, matroids), when it does not (0-1 knapsack), and the theory that explains the difference.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We start with the big picture: what makes a problem amenable to the greedy approach? The two key ingredients are the greedy-choice property (a locally optimal choice is part of some globally optimal solution) and optimal substructure (the subproblem after the greedy choice is also an optimization problem).</p></div></div>
+
 <p>greedy algorithm (greedy algorithm) is in each do <strong>optimal select</strong>algorithm, expected this to optimal solution. and Dynamic Programming different, greedy not need backtracking or, is, each times greedy select when have term. </p>
 
 <div class="env-block definition">
@@ -177,6 +180,8 @@ window.CHAPTERS.push({
  id: 'ch16-sec02',
  title: 'Activity Selection Problem',
  content: `<h2>2 Activity Selection Problem</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>The activity selection problem is the textbook greedy example: given activities with start and end times, select the maximum number of non-overlapping activities. The greedy choice (always pick the earliest-finishing activity) is provably optimal.</p></div></div>
+
 <p>Activity Selection Problem (activity selection) is greedy algorithm: given \\(n\\) activity, each activity \\(a_i\\) have start \\(s_i\\) end \\(f_i\\), need <strong>not </strong>activity. </p>
 
 <div class="env-block definition">
@@ -377,6 +382,8 @@ window.CHAPTERS.push({
  id: 'ch16-sec03',
  title: 'Huffman Coding',
  content: `<h2>3 Huffman encoding</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Huffman coding constructs an optimal prefix-free binary code by repeatedly merging the two lowest-frequency symbols. It is the foundation of lossless data compression (ZIP, gzip) and demonstrates greedy algorithms on tree structures.</p></div></div>
+
 <p>Huffman encoding is <strong>optimal prefix encoding</strong>, use. given frequency, Huffman greedy tree, frequency encoding, frequency encoding, from minimum encoding length. </p>
 
 <div class="env-block definition">
@@ -572,6 +579,8 @@ window.CHAPTERS.push({
  id: 'ch16-sec04',
  title: 'Matroids & Greedy Theory',
  content: `<h2>4 and greedy </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>When exactly do greedy algorithms work? Matroid theory provides the answer: a greedy algorithm on a weighted matroid always produces an optimal solution. This unifies Kruskal's MST (graphic matroid), scheduling, and other seemingly unrelated problems under a single theoretical framework.</p></div></div>
+
 <p>what greedy algorithm correct? <strong> (matroid)</strong>: in maximum problem, greedy algorithm always optimal. </p>
 
 <div class="env-block definition">
@@ -758,6 +767,8 @@ for each \\(i\\), use exchange argument proof \\(w(g_i) \\ge w(o_i)\\): if \\(w(
  id: 'ch16-sec05',
  title: 'Fractional Knapsack & Greedy Limitations',
  content: `<h2>5 Fractional Knapsack and greedy </h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Greedy shines on the fractional knapsack but fails on the 0-1 knapsack. This section contrasts the two variants, revealing why the discrete nature of the 0-1 knapsack requires dynamic programming (Chapter 17) instead.</p></div></div>
+
 <p>Fractional Knapsack Problem (fractional knapsack) item, this greedy strategy (by sorting) optimal. 0-1 knapsack not, greedy not again correct. through this two problem, I can solution greedy use. </p>
 
 <div class="env-block definition">
@@ -808,7 +819,8 @@ greedy 38%!</p></div>
 <div class="env-block remark">
 <div class="env-title">Remark</div>
 <div class="env-body"><p>greedy not always optimal, in NP-hard problem, greedy can . e.g. greedy \\(H_n = O(\\ln n)\\), this is term optimal (P = NP). </p></div>
-</div>`,
+</div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>The 0-1 knapsack exposed greedy's limitation: when subproblems overlap and choices interact, we need dynamic programming. Chapter 17 develops DP systematically, turning overlapping subproblems from a curse into a computational advantage.</p></div></div>`,
  visualizations: [
  {
  id: 'ch16-viz-fractional-knapsack',

@@ -14,6 +14,9 @@ window.CHAPTERS.push({
         title: '1. Cut Property & Generic MST',
         content: `
 <h2>Cut Property & Generic MST</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Chapter 14 found cheapest paths between vertices; now we ask a different question: what is the cheapest set of edges that keeps the entire graph connected? This is the minimum spanning tree (MST) problem, with applications from network design to clustering. This chapter develops the cut property (the theoretical foundation), then presents three classic algorithms: Kruskal's (using Union-Find from Chapter 11), Prim's (using priority queues from Chapter 8), and Boruvka's (the oldest MST algorithm, with a beautifully parallel structure).</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Before diving into specific algorithms, we establish the theoretical foundation: the cut property. It states that the lightest edge crossing any cut must belong to some MST. This single property justifies all three MST algorithms in this chapter.</p></div></div>
+
 
 <p>
 A <strong>spanning tree</strong> of a connected undirected graph \\(G = (V, E)\\) is a subgraph
@@ -380,6 +383,8 @@ They differ in <em>how</em> they find safe edges, but all rely on the cut proper
         title: '2. Kruskal\'s Algorithm',
         content: `
 <h2>Kruskal's Algorithm with Union-Find</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Kruskal's algorithm sorts edges by weight and greedily adds the lightest edge that does not create a cycle. The Union-Find data structure (Chapter 11) makes cycle detection efficient, yielding \(O(E \log E)\) time overall.</p></div></div>
+
 
 <p>
 Kruskal's algorithm builds the MST by processing edges in order of <strong>increasing weight</strong>,
@@ -604,6 +609,8 @@ Total: \\(O(m \\log n)\\).
         title: '3. Prim\'s Algorithm',
         content: `
 <h2>Prim's Algorithm with Priority Queue</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Prim's algorithm grows the MST one vertex at a time, always adding the lightest edge connecting the tree to a non-tree vertex. Using a Fibonacci heap (Chapter 8), Prim's achieves \(O(E + V \log V)\), which is optimal for dense graphs.</p></div></div>
+
 
 <p>
 Prim's algorithm grows a single MST tree from a starting vertex, repeatedly adding the
@@ -838,6 +845,8 @@ with a good union-find. Both run in \\(O(m \\log n)\\) with heaps.
         title: '4. Boruvka\'s Algorithm',
         content: `
 <h2>Boruvka's Algorithm</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>Boruvka's algorithm takes a different approach: in each phase, every component simultaneously adds its lightest outgoing edge. The number of components halves each phase, yielding \(O(E \log V)\) time and natural parallelism.</p></div></div>
+
 
 <p>
 Boruvka's algorithm (1926) is the oldest MST algorithm. In each <strong>phase</strong>,
@@ -1058,6 +1067,8 @@ many randomized and near-linear-time MST algorithms.
         title: '5. Correctness & MST Properties',
         content: `
 <h2>Correctness Proofs & MST Properties</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>We close by proving the correctness of the generic MST strategy, establishing the cycle property (the heaviest edge on any cycle is never in an MST), and exploring what happens when edge weights change dynamically.</p></div></div>
+
 
 <h3>5.1 Cycle Property</h3>
 
@@ -1147,7 +1158,8 @@ between its endpoints uses that edge. MST minimizes <em>total</em> weight, not i
 <div class="viz-placeholder" data-viz="ch15-viz-cycle-property"></div>
 
 <div class="viz-placeholder" data-viz="ch15-viz-edge-update"></div>
-`,
+
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>MST algorithms are greedy: they build the solution by making locally optimal edge choices. Chapter 16 formalizes the greedy paradigm, showing when greedy algorithms produce optimal solutions (via matroids) and when they fall short.</p></div></div>`,
         visualizations: [
         {
             id: 'ch15-viz-race',

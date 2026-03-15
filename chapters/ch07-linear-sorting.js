@@ -10,6 +10,9 @@ window.CHAPTERS.push({
  id: 'ch07-sec01',
  title: 'Decision Tree Model',
  content: `<h2>Decision Tree Model</h2>
+<div class="env-block bridge"><div class="env-title">Chapter Overview</div><div class="env-body"><p>Merge Sort and Quicksort both achieve \(O(n \log n)\), but is this optimal? This chapter answers that question definitively: any comparison-based sorting algorithm requires \(\Omega(n \log n)\) comparisons in the worst case. We then show how to break this barrier with non-comparison-based algorithms (Counting Sort, Radix Sort, Bucket Sort) that exploit additional structure in the input to sort in linear time.</p></div></div>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>To prove a lower bound on sorting, we need a model that captures all possible comparison-based algorithms. The decision tree model does exactly this: every comparison-based sort corresponds to a binary tree whose leaves are the possible output permutations.</p></div></div>
+
 <p>I already sorting algorithm: insert sorting \\(O(n^2)\\), Merge Sort \\(O(n \\log n)\\), Quicksort expected \\(O(n \\log n)\\). problem is: <strong>sorting can otherwise do more?</strong></p>
 
 <p>need this problem, I need compute define"more ". </p>
@@ -184,6 +187,8 @@ window.CHAPTERS.push({
  id: 'ch07-sec02',
  title: 'Omega(n log n) lower bound',
  content: `<h2>\\(\\Omega(n \\log n)\\) sorting lower bound</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>With the decision tree model in hand, we derive the \(\Omega(n \log n)\) lower bound by a counting argument: \(n!\) leaves require a tree of height at least \(\log_2(n!)\), which is \(\Theta(n \log n)\). This is one of the most elegant impossibility results in computer science.</p></div></div>
+
 
 <div class="env-block theorem"><div class="env-title">Theorem (Comparison Sort Lower Bound)</div><div class="env-body">
 <p>compare sorting algorithm in worst-case need \\(\\Omega(n \\log n)\\) times compare. </p>
@@ -322,6 +327,8 @@ $$\\lceil \\log_2(n!) \\rceil = n \\log_2 n - n \\log_2 e + \\frac{1}{2} \\log_2
  id: 'ch07-sec03',
  title: 'Counting Sort',
  content: `<h2>Counting Sort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>If we know the input consists of integers in a bounded range, we can bypass comparisons entirely. Counting Sort places each element directly into its correct position by counting occurrences, achieving \(O(n + k)\) time for keys in \(\{0, \ldots, k-1\}\).</p></div></div>
+
 <p><strong>Counting Sort</strong>(Counting Sort)is non-comparison sorting algorithm. it use element value have, in \\(O(n + k)\\) complete sorting(\\(k\\) is value size). </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Counting Sort)</div><div class="env-body">
@@ -506,6 +513,8 @@ $$\\lceil \\log_2(n!) \\rceil = n \\log_2 n - n \\log_2 e + \\frac{1}{2} \\log_2
  id: 'ch07-sec04',
  title: 'Radix Sort',
  content: `<h2>Radix Sort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>What if the range \(k\) is large? Radix Sort handles this by sorting digit-by-digit from least significant to most significant, using Counting Sort as a stable subroutine. It achieves \(O(d(n + k))\) time for \(d\)-digit numbers.</p></div></div>
+
 <p><strong>Radix Sort</strong>(Radix Sort)through (or)sorting key sorting problem. it from efficient (LSD)to efficient in order each use stable sort(usually is Counting Sort). </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (LSD Radix Sort)</div><div class="env-body">
@@ -677,6 +686,8 @@ $$\\lceil \\log_2(n!) \\rceil = n \\log_2 n - n \\log_2 e + \\frac{1}{2} \\log_2
  id: 'ch07-sec05',
  title: 'Bucket Sort',
  content: `<h2>Bucket Sort</h2>
+<div class="env-block bridge"><div class="env-title">Section Roadmap</div><div class="env-body"><p>When inputs are drawn uniformly from an interval, Bucket Sort distributes elements into buckets, sorts each bucket, and concatenates. Under the uniformity assumption, expected time is \(O(n)\). This section also provides a comparative summary of all sorting algorithms studied so far.</p></div></div>
+
 <p><strong>Bucket Sort</strong>(Bucket Sort)assume input uniform distribution in (\\([0, 1)\\)), to "", again each sorting. </p>
 
 <div class="env-block algorithm"><div class="env-title">Algorithm (Bucket Sort)</div><div class="env-body">
@@ -711,7 +722,8 @@ $$\\sum_{i=0}^{n-1} E[n_i^2] = n(2 - 1/n) = 2n - 1 = \\Theta(n)$$
 <p><strong>Radix Sort: </strong> length or (, IP, ID). </p>
 <p><strong>Bucket Sort: </strong> uniform distribution, hash value. </p>
 <p><strong>comparison-based sorting: </strong> use, use. </p>
-</div></div>`,
+</div></div>
+<div class="env-block bridge"><div class="env-title">Looking Ahead</div><div class="env-body"><p>Sorting is fundamental, but algorithms need efficient data structures to support them. Starting with Chapter 8, we enter the data structures arc of the course. Heaps and priority queues will power algorithms like Heapsort and Dijkstra's shortest paths, forming the bridge between sorting and graph algorithms.</p></div></div>`,
  visualizations: [
  {
  id: 'ch07-viz-bucket-sort',
